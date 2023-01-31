@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://i.ibb.co/j4T3GBF/Vue-js-Logo-2-svg.png" alt="Vue-js-Logo-svg" height=180px>
+  <img src="https://i.ibb.co/j4T3GBF/Vue-js-Logo-2-svg.png" alt="Vue-js-Logo-svg" height=160px>
   <h1>Vue.js v3</h1>
   
   <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=28&duration=1&pause=100000000000000000000&color=34495e&background=FF000000&center=true&vCenter=true&width=1000&height=72&lines=------------------------------------------------------------" alt="Typing SVG" /></a> 
