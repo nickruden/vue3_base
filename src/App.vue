@@ -4,12 +4,10 @@
   data() {
 	return {
     //Ex. 1
-		num: 5,
+		arr1: ['x', 'y', 'z'],
 
     //Ex. 2
-    num1: 1,
-		num2: 2,
-		num3: 3,
+    arr2: [1, 2, 3],
 	  }
   }
 }
@@ -18,12 +16,16 @@
 <template>
     <div id="main">
       <!-- Ex. 1  -->
-      <h2>1) Квадрат из числа 5 = {{ num ** 2 }}</h2>
+      <h2>Ex. 1</h2>
+      <p>Первый элемент массива: {{ arr1[0] }} </p>
+      <p>Второй элемент массива: {{ arr1[1] }}</p> 
+      <p>Третий элемент массива: {{ arr1[2] }}</p>
 
       <!-- Ex. 2 -->
-      <h2>2) Сумма чисел {{ num1}}, {{num2 }}, {{ num3 }} равна {{ num1 + num2 + num3 }}</h2>
+      <h2 id="h2">Ex. 2</h2>
+      <p>Сумма элементов массива = {{ arr2[0] + arr2[1] + arr2[2] }}</p>
 
-      <p>by NikitaRudenko</p>
+      <p id="endword">by NikitaRudenko</p>
     </div>
 </template>
 
@@ -38,13 +40,19 @@
     border-radius:50px;
     text-shadow: 0px 1px 10px rgb(160, 248, 207);
   }
+  #main p,  #main h2{
+    font-size: 30px;
+  }
   #main h2{
-    font-size: 40px;
+    margin-top: 10px;
+    text-decoration: underline;
+  }
+  #h2{
     margin-top: 20px;
   }
-  #main p{
+  #main #endword{
     font-size: 30px;
-    margin-top: 240px;
+    margin-top: 110px;
     color: rgb(83, 100, 80);
     text-shadow: 0px 1px 10px rgb(128, 151, 141);
   }
