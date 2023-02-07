@@ -3,9 +3,13 @@
   name: "App",
   data() {
 	return {
-    //Ex. 1
-    obj: {x: 1, y: 2, z: 3},
 	  }
+  },
+  methods: {
+    todaydate: function() {
+      var d = new Date();
+      alert("Today: " + d.toDateString());
+	}
   }
 }
 </script>
@@ -14,7 +18,7 @@
     <div id="main">
       <!-- Ex. 1  -->
       <h2>Ex. 1</h2>
-      <p>Сумма элементов объекта = {{ obj.x + obj.y + obj.z }}</p>
+      <p>Дата {{ todaydate() }}</p>
 
       <p id="endword">by NikitaRudenko</p>
     </div>
@@ -32,7 +36,7 @@
     text-shadow: 0px 1px 10px rgb(160, 248, 207);
   }
   #main p,  #main h2{
-    font-size: 40px;
+    font-size: 70px;
   }
   #main h2{
     margin-top: 10px;
@@ -40,7 +44,7 @@
   }
   #main #endword{
     font-size: 30px;
-    margin-top: 280px;
+    margin-top: 180px;
     color: rgb(83, 100, 80);
     text-shadow: 0px 1px 10px rgb(128, 151, 141);
   }
