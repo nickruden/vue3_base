@@ -4,10 +4,7 @@
   data() {
 	return {
     //Ex. 1
-		arr1: ['x', 'y', 'z'],
-
-    //Ex. 2
-    arr2: [1, 2, 3],
+    obj: {x: 1, y: 2, z: 3},
 	  }
   }
 }
@@ -17,13 +14,7 @@
     <div id="main">
       <!-- Ex. 1  -->
       <h2>Ex. 1</h2>
-      <p>Первый элемент массива: {{ arr1[0] }} </p>
-      <p>Второй элемент массива: {{ arr1[1] }}</p> 
-      <p>Третий элемент массива: {{ arr1[2] }}</p>
-
-      <!-- Ex. 2 -->
-      <h2 id="h2">Ex. 2</h2>
-      <p>Сумма элементов массива = {{ arr2[0] + arr2[1] + arr2[2] }}</p>
+      <p>Сумма элементов объекта = {{ obj.x + obj.y + obj.z }}</p>
 
       <p id="endword">by NikitaRudenko</p>
     </div>
@@ -41,18 +32,15 @@
     text-shadow: 0px 1px 10px rgb(160, 248, 207);
   }
   #main p,  #main h2{
-    font-size: 30px;
+    font-size: 40px;
   }
   #main h2{
     margin-top: 10px;
     text-decoration: underline;
   }
-  #h2{
-    margin-top: 20px;
-  }
   #main #endword{
     font-size: 30px;
-    margin-top: 110px;
+    margin-top: 280px;
     color: rgb(83, 100, 80);
     text-shadow: 0px 1px 10px rgb(128, 151, 141);
   }
