@@ -1,14 +1,23 @@
 <script>
  export default{
   name: "App",
+  data() {
+	  return {
+		  name: 'Nikita',
+		  surn: 'Rudenko',
+	}
+}
  }
 </script>
 
 <template>
     <div id="main">
-      <h1> Просто большие буквы </h1>
-      <p> Это первое взаимодействие с блоком представления в компоненте vue</p>
-      <h2> by NikitaRudenko</h2>
+      <div class="div1">
+      {{ name }}
+      </div>
+      <div class="div2">
+      {{ surn }}
+      </div>
     </div>
 </template>
 
@@ -23,14 +32,14 @@
     border-radius:50px;
     text-shadow: 0px 1px 20px rgb(46, 116, 39);
   }
-  #main h1, #main p{
+  #main .div1, #main .div2{
     font-size: 40px;
+    margin-top: 20px;
   }
-  #main p{
-    margin-top: 90px;
-  }
-  #main h2{
-    font-size: 30px;
+  #main .div1{
     margin-top: 140px;
+  }
+  #main .div2{
+    margin-top: -20px;
   }
 </style>
