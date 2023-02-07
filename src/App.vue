@@ -1,47 +1,36 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+<script>
+ export default{
+  name: "App",
+ }
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    <div id="main">
+      <h1> Просто большие буквы </h1>
+      <p> Это первое взаимодействие с блоком представления в компоненте vue</p>
+      <h2> by NikitaRudenko</h2>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+<style>
+  #main{
+    background-color: rgb(43, 221, 117);
+    color: rgb(32, 80, 27);
+    width: 1000px;
+    height: 500px;
+    text-align: center;
+    border: 10px solid rgb(43, 221, 117);
+    border-radius:50px;
+    text-shadow: 0px 1px 20px rgb(46, 116, 39);
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
+  #main h1, #main p{
+    font-size: 40px;
   }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+  #main p{
+    margin-top: 90px;
   }
-}
+  #main h2{
+    font-size: 30px;
+    margin-top: 140px;
+  }
 </style>
