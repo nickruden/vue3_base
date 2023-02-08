@@ -3,27 +3,35 @@
   name: "App",
   data() {
 	return {
+    // Ex. 1
+    text: 'Просто надпись',
 	  }
   },
+
+  // Ex. 2, Ex. 3
   methods: {
-    // Ex. 1
-    numalert: function(num) {
-      alert(num ** 2);
-	}
+    newtext1: function(){
+      this.text = 'мандарин'
+    },
+    newtext2: function(){
+      this.text = 'яблоко'
+    }
   }
 }
 </script>
 
 <template>
     <div id="main">
-      <!-- Ex. 2  -->
+      <!-- Ex. 1  -->
       <h2>Ex. 1</h2>
-      <p>Для возведения числа 2 в квадрат нажмите на кнопку</p>
-      <button @click="numalert(2)">2</button>
+      <p>{{ text }}</p>
 
-      <h2>Ex. 2</h2>
-      <p>Для возведения числа 3 в квадрат нажмите на кнопку</p>
-      <button @click="numalert(3)">3</button>
+      <!-- Ex. 2, Ex. 3 -->
+      <h2>Ex. 2, Ex. 3</h2>
+      <p>Для изменения знаения текста из Ex. 1 нажмите на одну из кнопок</p>
+      <button @click="newtext1">мандарин</button>
+
+      <button @click="newtext2">яблоко</button>
 
       <p id="endword">by NikitaRudenko</p>
     </div>
@@ -50,18 +58,20 @@
   }
   #main #endword{
     font-size: 30px;
-    margin-top: 70px;
+    margin-top: 130px;
     color: rgb(83, 100, 80);
     text-shadow: 0px 1px 10px rgb(128, 151, 141);
   }
+
   #main button{
-    margin-top: 10px;
+    margin-top: 15px;
+    margin-right: 20px;
     color: rgb(26, 151, 9);
-    font-size: 40px;
+    font-size: 30px;
     text-shadow: 0px 1px 10px rgb(108, 180, 84);
     background-color: rgb(66, 255, 198);
     height: 70px;
-    width: 140px;
+    width: 180px;
     border: 4px solid rgb(74, 197, 94);
     border-radius: 30px;
   }
