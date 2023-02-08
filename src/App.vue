@@ -5,15 +5,13 @@
 
   // Ex. 1
 	return {
-    visible: true
+    hidden: false,
+    textbutton: 'Изменить значение свойства на true'
 	  }
   },
   methods: {
-    clickbutton1: function(){
-      this.visible = false
-    },
-    clickbutton2: function(){
-      this.visible = true
+    clickbutton: function(){
+      this.hidden = true
     }
   }
 }
@@ -23,13 +21,10 @@
     <div id="main">
       <!-- Ex. 1  -->
       <h2>Ex. 1</h2>
-      <p v-if="visible">Этот первый абзац</p>
+      <p v-if="!hidden">Инвертируемое условие - показано, если значение свойства hidden будет равно false</p>
+      <p>Значение свойства 'hidden' равно {{ hidden }}</p>
 
-      <h2>Ex. 2</h2>
-      <p v-if="!visible">Этот второй абзац</p>
-
-      <button @click="clickbutton2()"> Показать первый абзац </button>
-      <button @click="clickbutton1()"> Показать второй абзац </button>
+      <button @click="clickbutton()">{{ textbutton }}</button>
 
       <p id="endword">by NikitaRudenko</p>
     </div>
@@ -56,7 +51,7 @@
   }
   #main #endword{
     font-size: 30px;
-    margin-top: 120px;
+    margin-top: 80px;
     color: rgb(83, 100, 80);
     text-shadow: 0px 1px 10px rgb(128, 151, 141);
   }
@@ -69,7 +64,7 @@
     text-shadow: 0px 1px 10px rgb(108, 180, 84);
     background-color: rgb(66, 255, 198);
     height: 90px;
-    width: 200px;
+    width: 250px;
     border: 4px solid rgb(74, 197, 94);
     border-radius: 40px;
   }
