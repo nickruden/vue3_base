@@ -4,17 +4,20 @@
   data() {
 	return {
     // Ex. 1
-    text: 'Просто надпись',
+    cost: 10,
+    amount: 140,
 	  }
   },
+  computed: {
+    price: function(){
+      return this.cost * this.amount
+    }
+  },
 
-  // Ex. 2, Ex. 3
+  // Ex. 2
   methods: {
-    newtext1: function(){
-      this.text = 'мандарин'
-    },
-    newtext2: function(){
-      this.text = 'яблоко'
+    newprice: function(){
+      this.cost = this.cost + 2
     }
   }
 }
@@ -24,14 +27,14 @@
     <div id="main">
       <!-- Ex. 1  -->
       <h2>Ex. 1</h2>
-      <p>{{ text }}</p>
+      <p>Цена продукта: {{ cost }}</p>
+      <p>Колличество продуктов: {{ amount }}</p>
+      <p>Полная стоимость продукта: {{ price }}</p>
 
-      <!-- Ex. 2, Ex. 3 -->
-      <h2>Ex. 2, Ex. 3</h2>
-      <p>Для изменения значения текста из Ex. 1 нажмите на одну из кнопок</p>
-      <button @click="newtext1">мандарин</button>
-
-      <button @click="newtext2">яблоко</button>
+      <!-- Ex. 2-->
+      <h2>Ex. 2</h2>
+      <p>Для изменения значения цены на 2 еденицы нажмите на кнопку</p>
+      <button @click="newprice">Новая цена</button>
 
       <p id="endword">by NikitaRudenko</p>
     </div>
@@ -53,12 +56,12 @@
   }
   #main h2{
     font-size: 30px;
-    margin-top: 15px;
+    margin-top: 8px;
     text-decoration: underline;
   }
   #main #endword{
     font-size: 30px;
-    margin-top: 130px;
+    margin-top: 50px;
     color: rgb(83, 100, 80);
     text-shadow: 0px 1px 10px rgb(128, 151, 141);
   }
@@ -70,10 +73,10 @@
     font-size: 30px;
     text-shadow: 0px 1px 10px rgb(108, 180, 84);
     background-color: rgb(66, 255, 198);
-    height: 70px;
-    width: 180px;
+    height: 90px;
+    width: 200px;
     border: 4px solid rgb(74, 197, 94);
-    border-radius: 30px;
+    border-radius: 40px;
   }
   #main button:hover{
     color: rgb(57, 107, 41);
