@@ -2,14 +2,18 @@
  export default{
   name: "App",
   data() {
+
+  // Ex. 1
 	return {
+    visible: true
 	  }
   },
-
-  // Ex. 2
   methods: {
-    clickbutton: function(){
-      alert("Первое нажатие на кнопку")
+    clickbutton1: function(){
+      this.visible = false
+    },
+    clickbutton2: function(){
+      this.visible = true
     }
   }
 }
@@ -19,12 +23,13 @@
     <div id="main">
       <!-- Ex. 1  -->
       <h2>Ex. 1</h2>
-      <a class="link" href="https://code.mu/" onclick="event.preventDefault()">После нажатия на эту надпись ничего не произойдёт</a>
+      <p v-if="visible">Этот первый абзац</p>
 
-      <!-- Ex. 2-->
       <h2>Ex. 2</h2>
-      <p>Сработает только одно нажатие по кнопке</p>
-      <button @click.once="clickbutton()"> Кнопка </button>
+      <p v-if="!visible">Этот второй абзац</p>
+
+      <button @click="clickbutton2()"> Показать первый абзац </button>
+      <button @click="clickbutton1()"> Показать второй абзац </button>
 
       <p id="endword">by NikitaRudenko</p>
     </div>
@@ -42,10 +47,10 @@
     text-shadow: 0px 1px 10px rgb(160, 248, 207);
   }
   #main p{
-    font-size: 25px;
+    font-size: 35px;
   }
   #main h2{
-    font-size: 30px;
+    font-size: 40px;
     margin-top: 8px;
     text-decoration: underline;
   }
@@ -60,7 +65,7 @@
     margin-top: 15px;
     margin-right: 20px;
     color: rgb(26, 151, 9);
-    font-size: 30px;
+    font-size: 20px;
     text-shadow: 0px 1px 10px rgb(108, 180, 84);
     background-color: rgb(66, 255, 198);
     height: 90px;
