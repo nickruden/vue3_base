@@ -1,10 +1,22 @@
 <script>
- export default{
+ export default {
   name: "App",
   data() {
-	return {
-    num1: 1,
-		num2: 2,
+    return {
+      date: 3,
+    }
+  },
+  methods: {
+    // Ex. 1
+    getDate: function () {
+      let week = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+      return week[this.date - 1];
+    },
+    
+    // Ex. 2
+    showDay: function () {
+      let weekday = this.getDate(this.date);
+      alert(weekday);
     }
   }
 }
@@ -12,9 +24,9 @@
 
 <template>
     <div id="main">
-      <!-- Ex. 1  -->
-      <h2>Ex. 1</h2>
-      <p>Сумма чисел {{ num1 }} и {{ num2 }} равна {{ this.num1 + this.num2 }}</p>
+      <!-- Ex. 1, Ex. 2  -->
+      <h2>Ex. 1, Ex. 2</h2>
+      <p>День недели {{ showDay() }}</p>
 
       <p id="endword">by NikitaRudenko</p>
     </div>
@@ -40,7 +52,7 @@
   }
   #main #endword{
     font-size: 30px;
-    margin-top: 270px;
+    margin-top: 280px;
     color: rgb(83, 100, 80);
     text-shadow: 0px 1px 10px rgb(128, 151, 141);
   }
