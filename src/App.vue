@@ -4,24 +4,30 @@
   data() {
   // Ex. 1
 	return {
-      age: prompt("Введите ваш возраст: "),
+      visible: true,
+      button: true,
     }
   },
   methods: {
-
+    hide: function() {
+      this.visible = !this.visible,
+      this.button = !this.button
+    }
   }
 }
 </script>
 
 <template>
-    <div id="main">
-      <!-- Ex. 1  -->
-      <h2>Ex. 1</h2>
-      <p v-if = "age <= 18">'подросток'</p>
-      <p v-else-if = "age >= 19 && age <= 25">'молодой человек'</p>
-      <p v-else-if = "age >= 26">'мужчина'</p>
-    </div>
-    <p id="endword">by NikitaRudenko</p>
+  <div id="main">
+    <h2>Ex. 1</h2>
+    <template v-if="visible">
+      <p>Просто абзац текста 1</p>
+      <p>Просто абзац текста 2</p>
+      <p>Просто абзац текста 3</p>
+    </template>
+    <button @click="hide()">{{ button ? 'Скрыть абзацы' : 'Показать абзацы' }}</button>
+  </div>
+  <p id="endword">by NikitaRudenko</p>
 </template>
 
 <style>
@@ -62,7 +68,7 @@
     text-shadow: 0px 1px 10px rgb(108, 180, 84);
     background-color: rgb(66, 255, 198);
     height: 70px;
-    width: 200px;
+    width: 210px;
     border: 4px solid rgb(74, 197, 94);
     border-radius: 40px;
   }
