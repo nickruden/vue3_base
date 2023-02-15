@@ -2,26 +2,38 @@
  export default{
   name: "App",
   data() {
-  // Ex. 1
+  // Ex. 1, 2, 3
 	return {
-      visible: true,
-      button: true,
+    items: [1, 2, 3, 4, 5],
     }
   },
   methods: {
-    hide: function() {
-      this.visible = !this.visible,
-      this.button = !this.button
-    }
+
   }
 }
 </script>
 
 <template>
   <div id="main">
-    <h2>Ex. 1</h2>
-    <p v-show="visible">Просто какой-то текст для упражнения</p>
-    <button @click="hide()">{{ button ? 'Скрыть текст' : 'Показать текст' }}</button>
+    <!-- Ex. 1 -->
+    <div>
+      <h2>Ex. 1</h2>
+      <div class="p" v-for="item in items"> {{ item }}</div>
+    </div>
+
+    <!-- Ex. 2 -->
+    <div>
+      <h2>Ex. 2</h2>
+      <div class="p" v-for="item in items">{{ item ** 2}}</div>
+    </div>
+
+    <!-- Ex. 3 -->
+    <div>
+    <h2>Ex. 3</h2>
+      <ul class="p" v-for="item in items">
+        <li> {{ item }} </li>
+      </ul>
+    </div>
   </div>
   <p id="endword">by NikitaRudenko</p>
 </template>
@@ -36,6 +48,9 @@
     border: 10px solid rgb(43, 221, 117);
     border-radius:60px;
     text-shadow: 0px 1px 10px rgb(160, 248, 207);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
   #main p{
     font-size: 38px;
@@ -43,9 +58,15 @@
     margin-bottom: 20px;
   }
   #main h2{
-    font-size: 48px;
+    font-size: 40px;
     margin-top: 20px;
     text-decoration: underline;
+  }
+  #main .p{
+    font-size: 24px;
+  }
+  #main ul{
+    text-align: left;
   }
   #endword{
     font-size: 30px;
