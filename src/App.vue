@@ -4,7 +4,7 @@
   data() {
   // Ex. 1
 	return {
-      day: new Date().getDay(),
+      age: prompt("Введите ваш возраст: "),
     }
   },
   methods: {
@@ -17,13 +17,9 @@
     <div id="main">
       <!-- Ex. 1  -->
       <h2>Ex. 1</h2>
-      <p v-if = "day == 1">Сегодня понедельник</p>
-      <p v-if = "day == 2">Сегодня вторник</p>
-      <p v-if = "day == 3">Сегодня среда</p>
-      <p v-if = "day == 4">Сегодня четверг</p>
-      <p v-if = "day == 5">Сегодня пятница</p>
-      <p v-if = "day == 6">Сегодня суббота</p>
-      <p v-if = "day == 7">Сегодня воскресенье</p>
+      <p v-if = "age <= 18">'подросток'</p>
+      <p v-else-if = "age >= 19 && age <= 25">'молодой человек'</p>
+      <p v-else-if = "age >= 26">'мужчина'</p>
     </div>
     <p id="endword">by NikitaRudenko</p>
 </template>
@@ -40,17 +36,14 @@
     text-shadow: 0px 1px 10px rgb(160, 248, 207);
   }
   #main p{
-    font-size: 28px;
+    font-size: 38px;
     margin-top: 20px;
     margin-bottom: 20px;
   }
   #main h2{
-    font-size: 40px;
+    font-size: 48px;
     margin-top: 20px;
     text-decoration: underline;
-  }
-  #main>h2+p{
-    font-size: 30px;
   }
   #endword{
     font-size: 30px;
