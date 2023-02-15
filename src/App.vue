@@ -68,6 +68,9 @@
     flex-direction: row;
     justify-content: space-around;
   }
+  #main div{
+    margin-top: 10px;
+  }
   #main p{
     font-size: 38px;
     margin-top: 20px;
