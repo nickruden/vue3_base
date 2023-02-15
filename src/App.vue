@@ -2,7 +2,7 @@
  export default{
   name: "App",
   data() {
-    // Ex. 1
+    // Ex. 1, 2, 3, 4
     return {
       obj: {
         user1: '100$',
