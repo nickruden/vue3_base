@@ -4,13 +4,11 @@
   data() {
   // Ex. 1
 	return {
-    isAdmin: true,
-	  }
+      day: new Date().getDay(),
+    }
   },
   methods: {
-    btn: function(){
-      this.isAdmin = !this.isAdmin
-    }
+
   }
 }
 </script>
@@ -19,10 +17,13 @@
     <div id="main">
       <!-- Ex. 1  -->
       <h2>Ex. 1</h2>
-      <p>Значение свойства 'isAdmin': {{ isAdmin }}</p>
-      <p v-if="isAdmin">Этот текст видно, пока  свойство 'isAdmin' содержит значение true</p>
-      <p v-else>Текст два, который не видно, пока свойство 'isAdmin' не примет значение false</p>
-      <button @click="btn()">Изменить значение</button>
+      <p v-if = "day == 1">Сегодня понедельник</p>
+      <p v-if = "day == 2">Сегодня вторник</p>
+      <p v-if = "day == 3">Сегодня среда</p>
+      <p v-if = "day == 4">Сегодня четверг</p>
+      <p v-if = "day == 5">Сегодня пятница</p>
+      <p v-if = "day == 6">Сегодня суббота</p>
+      <p v-if = "day == 7">Сегодня воскресенье</p>
     </div>
     <p id="endword">by NikitaRudenko</p>
 </template>
@@ -39,7 +40,7 @@
     text-shadow: 0px 1px 10px rgb(160, 248, 207);
   }
   #main p{
-    font-size: 26px;
+    font-size: 28px;
     margin-top: 20px;
     margin-bottom: 20px;
   }
