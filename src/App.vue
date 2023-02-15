@@ -4,7 +4,11 @@
   data() {
     // Ex. 1
     return {
-      arr: ['x', 'y', 'z'],
+      obj: {
+        user1: '100$',
+        user2: '200$',
+        user3: '300$',
+},
     }
   },
   methods: {
@@ -18,8 +22,32 @@
     <!-- Ex. 1 -->
     <div>
     <h2>Ex. 1</h2>
-      <ul class="p" v-for="(item, key) in arr">
-        <li>{{ key }} </li>
+      <ul class="p" v-for="item in obj">
+        <li>{{ item }} </li>
+      </ul>
+    </div>
+
+    <!-- Ex. 2 -->
+    <div>
+    <h2>Ex. 2</h2>
+      <ul class="p" v-for="(key, item) in obj">
+        <li>{{ item }} - {{ key }}</li>
+      </ul>
+    </div>
+
+    <!-- Ex. 3 -->
+    <div>
+    <h2>Ex. 3</h2>
+      <ul class="p" v-for="(key, item, index) in obj">
+        <li>{{ item }} - {{ key }} - {{ index }}</li>
+      </ul>
+    </div>
+
+    <!-- Ex. 4 -->
+    <div>
+    <h2>Ex. 4</h2>
+      <ul class="p" v-for="(key, item, index) in obj">
+        <li>{{ item }} - {{ key }} - {{ index + 1}}</li>
       </ul>
     </div>
   </div>
