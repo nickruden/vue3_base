@@ -4,27 +4,12 @@
   data() {
   // Ex. 1
 	return {
-    visible1: true,
-    visible2: true,
-    visible3: true,
-    text1: true,
-    text2: true,
-    text3: true
+    isAdmin: true,
 	  }
   },
-
   methods: {
-    toggle1: function(){
-      this.text1 = !this.text1,
-      this.visible1 = !this.visible1
-    }, 
-    toggle2: function(){
-      this.text2 = !this.text2,
-      this.visible2 = !this.visible2
-    },
-    toggle3: function(){
-      this.text3 = !this.text3,
-      this.visible3 = !this.visible3
+    btn: function(){
+      this.isAdmin = !this.isAdmin
     }
   }
 }
@@ -34,12 +19,10 @@
     <div id="main">
       <!-- Ex. 1  -->
       <h2>Ex. 1</h2>
-      <p v-if="text1">Нажмите на кнопку 1, чтобы скрыть или показать этот абзац</p>
-      <p v-if="text2">Нажмите на кнопку 2, чтобы скрыть или показать этот абзац</p>
-      <p v-if="text3">Нажмите на кнопку 3, чтобы скрыть или показать этот абзац</p>
-      <button @click="toggle1()">{{ visible1 ? 'Скрыть 1' : 'Показать 1'}}</button>
-      <button @click="toggle2()">{{ visible2 ? 'Скрыть 2' : 'Показать 2'  }}</button>
-      <button @click="toggle3()">{{ visible3 ? 'Скрыть 3' : 'Показать 3' }}</button>
+      <p>Значение свойства 'isAdmin': {{ isAdmin }}</p>
+      <p v-if="isAdmin">Этот текст видно, пока  свойство 'isAdmin' содержит значение true</p>
+      <p v-else>Текст два, который не видно, пока свойство 'isAdmin' не примет значение false</p>
+      <button @click="btn()">Изменить значение</button>
     </div>
     <p id="endword">by NikitaRudenko</p>
 </template>
@@ -48,7 +31,7 @@
   #main{
     background-color: rgb(43, 221, 117);
     color: rgb(189, 255, 177);
-    width: 1000px;
+    width: 1100px;
     height: 600px;
     text-align: center;
     border: 10px solid rgb(43, 221, 117);
@@ -65,10 +48,13 @@
     margin-top: 20px;
     text-decoration: underline;
   }
+  #main>h2+p{
+    font-size: 30px;
+  }
   #endword{
     font-size: 30px;
     margin-top: 540px;
-    margin-left: -610px;
+    margin-left: -670px;
     color: rgb(83, 100, 80);
     text-shadow: 0px 1px 10px rgb(128, 151, 141);
   }
@@ -81,8 +67,8 @@
     font-size: 20px;
     text-shadow: 0px 1px 10px rgb(108, 180, 84);
     background-color: rgb(66, 255, 198);
-    height: 60px;
-    width: 150px;
+    height: 70px;
+    width: 200px;
     border: 4px solid rgb(74, 197, 94);
     border-radius: 40px;
   }
