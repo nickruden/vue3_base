@@ -2,9 +2,9 @@
  export default{
   name: "App",
   data() {
-  // Ex. 1, 2, 3
-	return {
-    items: [1, 2, 3, 4, 5],
+    // Ex. 1
+    return {
+      arr: ['x', 'y', 'z'],
     }
   },
   methods: {
@@ -17,21 +17,9 @@
   <div id="main">
     <!-- Ex. 1 -->
     <div>
-      <h2>Ex. 1</h2>
-      <div class="p" v-for="item in items"> {{ item }}</div>
-    </div>
-
-    <!-- Ex. 2 -->
-    <div>
-      <h2>Ex. 2</h2>
-      <div class="p" v-for="item in items">{{ item ** 2}}</div>
-    </div>
-
-    <!-- Ex. 3 -->
-    <div>
-    <h2>Ex. 3</h2>
-      <ul class="p" v-for="item in items">
-        <li> {{ item }} </li>
+    <h2>Ex. 1</h2>
+      <ul class="p" v-for="(item, key) in arr">
+        <li>{{ key }} </li>
       </ul>
     </div>
   </div>
@@ -66,6 +54,7 @@
     font-size: 24px;
   }
   #main ul{
+    margin-top: 10px;
     text-align: left;
   }
   #endword{
@@ -74,25 +63,5 @@
     margin-left: -670px;
     color: rgb(83, 100, 80);
     text-shadow: 0px 1px 10px rgb(128, 151, 141);
-  }
-
-  #main button{
-    margin-top: 15px;
-    margin-right: 20px;
-    margin-left: 30px;
-    color: rgb(26, 151, 9);
-    font-size: 20px;
-    text-shadow: 0px 1px 10px rgb(108, 180, 84);
-    background-color: rgb(66, 255, 198);
-    height: 70px;
-    width: 210px;
-    border: 4px solid rgb(74, 197, 94);
-    border-radius: 40px;
-  }
-  #main button:hover{
-    color: rgb(57, 107, 41);
-    background-color: rgb(74, 197, 94);
-    border: 4px solid rgb(66, 255, 198);
-    text-shadow: 0px 1px 10px rgb(160, 248, 207);
   }
 </style>
