@@ -20,12 +20,8 @@
 <template>
   <div id="main">
     <h2>Ex. 1</h2>
-    <template v-if="visible">
-      <p>Просто абзац текста 1</p>
-      <p>Просто абзац текста 2</p>
-      <p>Просто абзац текста 3</p>
-    </template>
-    <button @click="hide()">{{ button ? 'Скрыть абзацы' : 'Показать абзацы' }}</button>
+    <p v-show="visible">Просто какой-то текст для упражнения</p>
+    <button @click="hide()">{{ button ? 'Скрыть текст' : 'Показать текст' }}</button>
   </div>
   <p id="endword">by NikitaRudenko</p>
 </template>
