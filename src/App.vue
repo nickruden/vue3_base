@@ -2,13 +2,9 @@
  export default{
   name: "App",
   data() {
-    // Ex. 1, 2, 3, 4
+    // Ex. 1, 2
     return {
-      obj: {
-        user1: '100$',
-        user2: '200$',
-        user3: '300$',
-},
+      items: [1, 2, 3],
     }
   },
   methods: {
@@ -21,33 +17,21 @@
   <div id="main">
     <!-- Ex. 1 -->
     <div>
-    <h2>Ex. 1</h2>
-      <ul class="p" v-for="item in obj">
-        <li>{{ item }} </li>
-      </ul>
+      <h2>Ex. 1</h2>
+      <div v-for="item in items">
+        <p>{{ item }}</p>
+        <p class="divider"></p>
+      </div>
     </div>
 
     <!-- Ex. 2 -->
     <div>
-    <h2>Ex. 2</h2>
-      <ul class="p" v-for="(key, item) in obj">
-        <li>{{ item }} - {{ key }}</li>
-      </ul>
-    </div>
-
-    <!-- Ex. 3 -->
-    <div>
-    <h2>Ex. 3</h2>
-      <ul class="p" v-for="(key, item, index) in obj">
-        <li>{{ item }} - {{ key }} - {{ index }}</li>
-      </ul>
-    </div>
-
-    <!-- Ex. 4 -->
-    <div>
-    <h2>Ex. 4</h2>
-      <ul class="p" v-for="(key, item, index) in obj">
-        <li>{{ item }} - {{ key }} - {{ index + 1}}</li>
+      <h2>Ex. 2</h2>
+      <ul class="p">
+        <template v-for="item in items">
+          <li>{{ item }}</li>
+          <li class="divider"></li>
+        </template>
       </ul>
     </div>
   </div>
@@ -72,7 +56,7 @@
     margin-top: 10px;
   }
   #main p{
-    font-size: 38px;
+    font-size: 28px;
     margin-top: 20px;
     margin-bottom: 20px;
   }
@@ -82,7 +66,7 @@
     text-decoration: underline;
   }
   #main .p{
-    font-size: 24px;
+    font-size: 28px;
   }
   #main ul{
     margin-top: 10px;
