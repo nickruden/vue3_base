@@ -4,6 +4,9 @@
   data() {
   // Ex. 1
 	return {
+    visible1: true,
+    visible2: true,
+    visible3: true,
     text1: true,
     text2: true,
     text3: true
@@ -13,12 +16,15 @@
   methods: {
     toggle1: function(){
       this.text1 = !this.text1
+      this.visible1 = !this.visible1
     }, 
     toggle2: function(){
       this.text2 = !this.text2
+      this.visible2 = !this.visible2
     },
     toggle3: function(){
       this.text3 = !this.text3
+      this.visible3 = !this.visible3
     }
   }
 }
@@ -31,10 +37,9 @@
       <p v-if="text1">Нажмите на кнопку 1, чтобы скрыть или показать этот абзац</p>
       <p v-if="text2">Нажмите на кнопку 2, чтобы скрыть или показать этот абзац</p>
       <p v-if="text3">Нажмите на кнопку 3, чтобы скрыть или показать этот абзац</p>
-
-      <button @click="toggle1()">1</button>
-      <button @click="toggle2()">2</button>
-      <button @click="toggle3()">3</button>
+      <button @click="toggle1()">{{ visible1 ? 'Скрыть 1' : 'Показать 1'}}</button>
+      <button @click="toggle2()">{{ visible2 ? 'Скрыть 2' : 'Показать 2'  }}</button>
+      <button @click="toggle3()">{{ visible3 ? 'Скрыть 3' : 'Показать 3' }}</button>
     </div>
     <p id="endword">by NikitaRudenko</p>
 </template>
