@@ -4,39 +4,21 @@
   data() {
   // Ex. 1
 	return {
-    hidden: false,
     text1: true,
-
-    //Ex. 3
     text2: true,
-    button1: false,
-    button2: true
+    text3: true
 	  }
   },
 
   methods: {
-    clickbutton: function(){
-      this.hidden = true
+    toggle1: function(){
+      this.text1 = !this.text1
+    }, 
+    toggle2: function(){
+      this.text2 = !this.text2
     },
-
-    // Ex. 2
-    show1: function(){
-      this.text1 = true
-    },
-    hide1: function(){
-      this.text1 = false
-    },
-
-    // Ex. 3
-    show2: function(){
-      this.text2 = true,
-      this.button1 = false,
-      this.button2 = true
-    },
-    hide2: function(){
-      this.text2 = false,
-      this.button2 = false,
-      this.button1 = true
+    toggle3: function(){
+      this.text3 = !this.text3
     }
   }
 }
@@ -46,21 +28,13 @@
     <div id="main">
       <!-- Ex. 1  -->
       <h2>Ex. 1</h2>
-      <p v-if="hidden">Просто какой-то текст</p>
-      <button @click="clickbutton()">нажми</button>
+      <p v-if="text1">Нажмите на кнопку 1, чтобы скрыть или показать этот абзац</p>
+      <p v-if="text2">Нажмите на кнопку 2, чтобы скрыть или показать этот абзац</p>
+      <p v-if="text3">Нажмите на кнопку 3, чтобы скрыть или показать этот абзац</p>
 
-      <!-- Ex. 2  -->
-      <h2>Ex. 2</h2>
-      <p v-if="text1">Просто какой-то текст</p>
-      <button @click="show1()">показать</button>
-      <button @click="hide1()">скрыть</button>
-
-      <!-- Ex. 3  -->
-      <h2>Ex. 3</h2>
-      <p v-if="text2">Просто какой-то текст</p>
-      <button v-if="button1" @click="show2()">показать</button>
-      <button v-if="button2" @click="hide2()">скрыть</button>
-
+      <button @click="toggle1()">1</button>
+      <button @click="toggle2()">2</button>
+      <button @click="toggle3()">3</button>
     </div>
     <p id="endword">by NikitaRudenko</p>
 </template>
@@ -77,11 +51,13 @@
     text-shadow: 0px 1px 10px rgb(160, 248, 207);
   }
   #main p{
-    font-size: 22px;
+    font-size: 26px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   #main h2{
-    font-size: 30px;
-    margin-top: 8px;
+    font-size: 40px;
+    margin-top: 20px;
     text-decoration: underline;
   }
   #endword{
