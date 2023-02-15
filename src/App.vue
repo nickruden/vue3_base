@@ -15,15 +15,15 @@
 
   methods: {
     toggle1: function(){
-      this.text1 = !this.text1
+      this.text1 = !this.text1,
       this.visible1 = !this.visible1
     }, 
     toggle2: function(){
-      this.text2 = !this.text2
+      this.text2 = !this.text2,
       this.visible2 = !this.visible2
     },
     toggle3: function(){
-      this.text3 = !this.text3
+      this.text3 = !this.text3,
       this.visible3 = !this.visible3
     }
   }
