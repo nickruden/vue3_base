@@ -4,7 +4,10 @@
   data() {
     //Ex. 1
     return {
-      cssClasses: "ex37",
+      obj: {
+        done: true,
+        selected:  false,
+		  },
     }
   },
   methods: {
@@ -18,7 +21,7 @@
     <!-- Ex. 1 -->
     <div>
       <h2>Ex. 1</h2>
-      <p :class="cssClasses"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est perspiciatis culpa animi? Error totam laborum, doloremque maiores optio minus ipsa et laboriosam architecto assumenda nam labore ad in libero, animi cupiditate iusto veritatis. Cupiditate ipsa repellendus, earum pariatur quis nisi error voluptas aliquid, eum doloremque quas hic tempore! Nihil, et.</p>
+      <p :class="obj"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est perspiciatis culpa animi? Error totam laborum, doloremque maiores optio minus ipsa et laboriosam architecto assumenda nam labore ad in libero, animi cupiditate iusto veritatis. Cupiditate ipsa repellendus, earum pariatur quis nisi error voluptas aliquid, eum doloremque quas hic tempore! Nihil, et.</p>
     </div>
   </div>
   <p id="endword">by NikitaRudenko</p>
@@ -84,11 +87,18 @@
     text-shadow: 0px 1px 10px rgb(128, 151, 141);
   }
 
-  .ex37{
+  .done{
     font-size: 28px;
     margin-top: 20px;
     margin-bottom: 20px;
     color: rgb(255, 181, 83);
     text-shadow: 0px 1px 10px rgb(102, 60, 4);
+    text-decoration: underline;
+  }
+  .selected{
+    font-size: 20px;
+    color: rgb(59, 74, 124);
+    text-shadow: 0px 1px 10px rgb(29, 78, 110);
+    text-decoration: none;
   }
 </style>
