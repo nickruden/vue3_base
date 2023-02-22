@@ -3,6 +3,7 @@
   name: "App",
   data() {
     return {
+      items: [1, -2, 3, -4, 5],
     }
   },
   methods: {
@@ -16,9 +17,9 @@
     <!-- Ex. 1 -->
     <div>
       <h2>Ex. 1</h2>
-      <div v-for="num in 30">
-        <p>{{ num }}</p>
-      </div>
+      <template v-for="item in items">
+        <p v-if="item > 0">{{ item }}</p>
+      </template>
     </div>
   </div>
   <p id="endword">by NikitaRudenko</p>
@@ -31,7 +32,7 @@
     background-color: rgb(43, 221, 117);
     color: rgb(189, 255, 177);
     width: 1100px;
-    height: 2100px;
+    height: 500px;
     text-align: center;
     border: 10px solid rgb(43, 221, 117);
     border-radius:60px;
@@ -75,7 +76,7 @@
   }
   #endword{
     font-size: 30px;
-    margin-top: 2090px;
+    margin-top: 490px;
     margin-left: -670px;
     color: rgb(83, 100, 80);
     text-shadow: 0px 1px 10px rgb(128, 151, 141);
