@@ -2,11 +2,35 @@
  export default{
   name: "App",
   data() {
-    // Ex. 1, 2
+    // Ex. 1
     return {
-      items: [1, 2, 3],
+      hrefs: [
+			{href: '1.html', text: 'text1'},
+			{href: '2.html', text: 'text2'},
+			{href: '3.html', text: 'text3'},
+		],
+
+    // Ex. 2
+    products: [
+			{
+				name: 'product1',
+				price: 100,
+				quantity: 5
+			},
+			{
+				name: 'product2',
+				price: 200,
+				quantity: 4
+			},
+			{
+				name: 'product3',
+				price: 300,
+				quantity: 3
+			},
+		],
     }
   },
+
   methods: {
 
   }
@@ -18,21 +42,21 @@
     <!-- Ex. 1 -->
     <div>
       <h2>Ex. 1</h2>
-      <div v-for="item in items">
-        <p>{{ item }}</p>
-        <p class="divider"></p>
+      <div v-for="item in hrefs">
+        <a href="{{ item.href }}">{{ item.text }}</a>
       </div>
     </div>
 
     <!-- Ex. 2 -->
     <div>
       <h2>Ex. 2</h2>
-      <ul class="p">
-        <template v-for="item in items">
-          <li>{{ item }}</li>
-          <li class="divider"></li>
-        </template>
-      </ul>
+        <table> 
+          <tr v-for="product in products">
+		        <td>{{ product.name }}</td>
+		        <td>{{ product.price }}</td>
+		        <td>{{ product.quantity }}</td> 
+	        </tr>
+        </table>
     </div>
   </div>
   <p id="endword">by NikitaRudenko</p>
@@ -71,6 +95,19 @@
   #main ul{
     margin-top: 10px;
     text-align: left;
+  }
+  #main table{
+    font-size: 28px;
+    border: 5px solid rgb(30, 97, 69);
+    padding: 10px;
+  }
+  #main a{
+    font-size: 24px;
+    color: rgb(189, 255, 177);
+  }
+  #main a:hover{
+    font-size: 24px;
+    color: rgb(22, 88, 69);
   }
   #endword{
     font-size: 30px;
