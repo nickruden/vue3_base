@@ -31,9 +31,7 @@
     <!-- Ex. 1 -->
     <div>
       <h2>Ex. 1</h2>
-      <ul v-for="product in products" :key="product.id">
-        <li>{{ product.name }}</li>
-      </ul>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est perspiciatis culpa animi? Error totam laborum, doloremque maiores optio minus ipsa et laboriosam architecto assumenda nam labore ad in libero, animi cupiditate iusto veritatis. Cupiditate ipsa repellendus, earum pariatur quis nisi error voluptas aliquid, eum doloremque quas hic tempore! Nihil, et.</p>
     </div>
   </div>
   <p id="endword">by NikitaRudenko</p>
@@ -62,6 +60,8 @@
     font-size: 28px;
     margin-top: 20px;
     margin-bottom: 20px;
+    color: rgb(3, 114, 58);
+    text-shadow: 0px 1px 10px rgb(20, 143, 81);
   }
   #main h2{
     font-size: 40px;
