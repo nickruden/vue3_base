@@ -7,10 +7,6 @@
       obj: {
 			  hidden: true,
 		  },
-      btn: {
-        show: true,
-        hide: false,
-      }
     }
   },
   
