@@ -3,8 +3,6 @@
   name: "App",
   data() {
     return {
-      isValid: true,
-		  isDisabled: true  ,
     }
   },
   methods: {
@@ -18,7 +16,13 @@
     <!-- Ex. 1 -->
     <div>
       <h2>Ex. 1</h2>
-      <p :class="{active: isValid, valid: isDisabled}"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est perspiciatis culpa animi? Error totam laborum, doloremque maiores optio minus ipsa et laboriosam architecto assumenda nam labore ad in libero, animi cupiditate iusto veritatis. Cupiditate ipsa repellendus, earum pariatur quis nisi error voluptas aliquid, eum doloremque quas hic tempore! Nihil, et.</p>
+      <p :style="{color: 'rgb(33, 175, 104)', backgroundColor: 'yellow'}"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est perspiciatis culpa animi? Error totam laborum, doloremque maiores optio minus ipsa et laboriosam architecto assumenda nam labore ad in libero, animi cupiditate iusto veritatis. Cupiditate ipsa repellendus, earum pariatur quis nisi error voluptas aliquid, eum doloremque quas hic tempore! Nihil, et.</p>
+    </div>
+
+    <!-- Ex. 2 -->
+    <div>
+      <h2>Ex. 2</h2>
+      <p :style="{fontStyle: 'italic', fontWeight: 'bold'}"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est perspiciatis culpa animi? Error totam laborum, doloremque maiores optio minus ipsa et laboriosam architecto assumenda nam labore ad in libero, animi cupiditate iusto veritatis. Cupiditate ipsa repellendus, earum pariatur quis nisi error voluptas aliquid, eum doloremque quas hic tempore! Nihil, et.</p>
     </div>
   </div>
   <p id="endword">by NikitaRudenko</p>
@@ -36,16 +40,13 @@
     border: 10px solid rgb(43, 221, 117);
     border-radius:60px;
     text-shadow: 0px 1px 10px rgb(160, 248, 207);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
   }
   #main div{
     margin-top: 10px;
   }
   #main h2{
     font-size: 40px;
-    margin-top: 4px;
+    margin-top: 10px;
     text-decoration: underline;
   }
   #main .p{
