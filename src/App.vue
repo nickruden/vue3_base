@@ -3,41 +3,32 @@
   name: "App",
   data() {
     return {
-      // Ex. 1, 2, 3, 4, 5, 6
-      arr: [1, 2, 3, 4, 5],
+      // Ex. 1, 2, 3, 4
+      obj: {
+			  hidden: true,
+		  },
+      btn: {
+        show: true,
+        hide: false,
+      }
     }
   },
   
 
   methods: {
-    // Ex. 1
-    add: function() {
-      this.arr.push(this.arr.length+1);
-    },
-
     // Ex. 2
-    delf: function() {
-      this.arr.shift();
+    show: function() {
+      this.obj.hidden = false;
     },
 
     // Ex. 3
-    dell: function() {
-      this.arr.pop();
+    hide: function() {
+      this.obj.hidden = true;
     },
 
     // Ex. 4
-    delp: function() {
-      this.arr.splice(this.arr.length-2, 1);
-    },
-
-    // Ex. 5
-    sort: function() {
-      this.arr.sort();
-    },
-
-    // Ex. 6
-    rev: function() {
-      this.arr.reverse();
+    toggle: function() {
+      this.obj.hidden = !this.obj.hidden;
     },
   }
 }
@@ -47,27 +38,18 @@
   <div id="main">
     <!-- Ex. 1 -->
     <div>
-      <h2>Ex. 1, 2, 3, 4, 5, 6 </h2>
-      <ul v-for="elem in  arr">
-        <li>{{ elem }}</li>
-      </ul>
+      <h2>Ex. 1, 2, 3, 4</h2>
+      <p :class="obj">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero et nulla aspernatur. Aperiam provident, ad eligendi aliquam saepe quo ex omnis deserunt earum quibusdam repudiandae cupiditate doloribus voluptatum, architecto quos velit? Alias harum minus, aut et quam veritatis nam, eveniet quisquam, dolor similique qui ipsum quas. Esse quod eius nostrum!</p>
     </div>
-    <button @click="add">add</button>
 
    <!-- Ex. 2 -->
-    <button @click="delf">del first</button>
+    <button @click="show">show</button>
 
    <!-- Ex. 3 -->
-    <button @click="dell">del last</button>
+    <button @click="hide">hide</button>
 
    <!-- Ex. 4 -->
-    <button @click="delp">del penult</button>
-
-   <!-- Ex. 5 -->
-    <button @click="sort">sort</button>
-
-   <!-- Ex. 6 -->
-    <button @click="rev">reverse order</button>
+    <button @click="toggle">show / hide</button>
 
     <p id="endword">by NikitaRudenko</p>
   </div>
@@ -138,6 +120,10 @@
     background-color: rgb(74, 197, 94);
     border: 4px solid rgb(66, 255, 198);
     text-shadow: 0px 1px 10px rgb(160, 248, 207);
+  }
+
+  .hidden {
+	display: none;
   }
 
   #endword{
