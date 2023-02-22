@@ -76,7 +76,7 @@
   }
   #endword{
     font-size: 30px;
-    margin-top: 490px;
+    margin-top: 480px;
     margin-left: -670px;
     color: rgb(83, 100, 80);
     text-shadow: 0px 1px 10px rgb(128, 151, 141);
