@@ -3,49 +3,31 @@
   name: "App",
   data() {
     return {
-      // Ex. 1, 2, 3, 4
-      obj: {
-			  hidden: true,
-		  },
+      // Ex. 1, 2, 3
+      message: "Что-то написано...",
+      num: 2,
     }
   },
-  
-
   methods: {
-    // Ex. 2
-    show: function() {
-      this.obj.hidden = false;
-    },
-
-    // Ex. 3
-    hide: function() {
-      this.obj.hidden = true;
-    },
-
-    // Ex. 4
-    toggle: function() {
-      this.obj.hidden = !this.obj.hidden;
-    },
   }
 }
 </script>
 
 <template>
   <div id="main">
-    <!-- Ex. 1 -->
+    <!-- Ex. 1, 2 -->
     <div>
-      <h2>Ex. 1, 2, 3, 4</h2>
-      <p :class="obj">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero et nulla aspernatur. Aperiam provident, ad eligendi aliquam saepe quo ex omnis deserunt earum quibusdam repudiandae cupiditate doloribus voluptatum, architecto quos velit? Alias harum minus, aut et quam veritatis nam, eveniet quisquam, dolor similique qui ipsum quas. Esse quod eius nostrum!</p>
+      <h2>Ex. 1, 2</h2>
+      <input v-model="message">
+      <p class="pinput">{{ message }}</p>
     </div>
 
-   <!-- Ex. 2 -->
-    <button @click="show">show</button>
-
    <!-- Ex. 3 -->
-    <button @click="hide">hide</button>
-
-   <!-- Ex. 4 -->
-    <button @click="toggle">show / hide</button>
+   <div>
+    <h2>Ex. 3</h2>
+    <input v-model="num">
+    <p>Квадрат введёного числа: {{ num ** 2 }}</p>
+   </div>
 
     <p id="endword">by NikitaRudenko</p>
   </div>
@@ -65,6 +47,7 @@
   }
   #main div{
     margin-top: 10px;
+    margin-bottom: 40px;
   }
   #main p{
     font-size: 28px;
@@ -78,6 +61,9 @@
   }
   #main .p{
     font-size: 28px;
+  }
+  #main .pinput{
+    text-transform: uppercase;
   }
   #main ul{
     margin-top: 10px;
@@ -113,13 +99,21 @@
   }
   #main button:hover{
     color: rgb(57, 107, 41);
-    background-color: rgb(74, 197, 94);
+    background-color: rgb(20, 167, 45);
     border: 4px solid rgb(66, 255, 198);
     text-shadow: 0px 1px 10px rgb(160, 248, 207);
   }
-
-  .hidden {
-	display: none;
+  
+  #main input{
+    font-size: 20px;
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    border: 4px solid rgb(238, 255, 250);
+    background-color: rgba(19, 151, 61, 0.616);
+    color: rgb(131, 255, 214);
+    text-shadow: 0px 1px 10px rgb(0, 255, 136);
+    text-align: center;
   }
 
   #endword{
