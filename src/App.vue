@@ -26,7 +26,7 @@
    <div>
     <h2>Ex. 3</h2>
     <input v-model="num">
-    <p>Квадрат введёного числа: {{ num ** 2 }}</p>
+    <p>Квадрат введённого числа: {{ num ** 2 }}</p>
    </div>
 
     <p id="endword">by NikitaRudenko</p>
