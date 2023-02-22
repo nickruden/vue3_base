@@ -2,35 +2,9 @@
  export default{
   name: "App",
   data() {
-    // Ex. 1
     return {
-      hrefs: [
-			{href: '1.html', text: 'text1'},
-			{href: '2.html', text: 'text2'},
-			{href: '3.html', text: 'text3'},
-		],
-
-    // Ex. 2
-    products: [
-			{
-				name: 'product1',
-				price: 100,
-				quantity: 5
-			},
-			{
-				name: 'product2',
-				price: 200,
-				quantity: 4
-			},
-			{
-				name: 'product3',
-				price: 300,
-				quantity: 3
-			},
-		],
     }
   },
-
   methods: {
 
   }
@@ -42,21 +16,9 @@
     <!-- Ex. 1 -->
     <div>
       <h2>Ex. 1</h2>
-      <div v-for="item in hrefs">
-        <a href="{{ item.href }}">{{ item.text }}</a>
+      <div v-for="num in 30">
+        <p>{{ num }}</p>
       </div>
-    </div>
-
-    <!-- Ex. 2 -->
-    <div>
-      <h2>Ex. 2</h2>
-        <table> 
-          <tr v-for="product in products">
-		        <td>{{ product.name }}</td>
-		        <td>{{ product.price }}</td>
-		        <td>{{ product.quantity }}</td> 
-	        </tr>
-        </table>
     </div>
   </div>
   <p id="endword">by NikitaRudenko</p>
@@ -64,10 +26,12 @@
 
 <style>
   #main{
+    margin-top: 50px;
+    margin-bottom: 50px;
     background-color: rgb(43, 221, 117);
     color: rgb(189, 255, 177);
     width: 1100px;
-    height: 600px;
+    height: 2100px;
     text-align: center;
     border: 10px solid rgb(43, 221, 117);
     border-radius:60px;
@@ -86,7 +50,7 @@
   }
   #main h2{
     font-size: 40px;
-    margin-top: 20px;
+    margin-top: 4px;
     text-decoration: underline;
   }
   #main .p{
@@ -111,7 +75,7 @@
   }
   #endword{
     font-size: 30px;
-    margin-top: 540px;
+    margin-top: 2090px;
     margin-left: -670px;
     color: rgb(83, 100, 80);
     text-shadow: 0px 1px 10px rgb(128, 151, 141);
