@@ -3,6 +3,8 @@
   name: "App",
   data() {
     return {
+      isValid: true,
+		  isDisabled: true  ,
     }
   },
   methods: {
@@ -16,7 +18,7 @@
     <!-- Ex. 1 -->
     <div>
       <h2>Ex. 1</h2>
-      <p :class="{active: true, valid: false}"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est perspiciatis culpa animi? Error totam laborum, doloremque maiores optio minus ipsa et laboriosam architecto assumenda nam labore ad in libero, animi cupiditate iusto veritatis. Cupiditate ipsa repellendus, earum pariatur quis nisi error voluptas aliquid, eum doloremque quas hic tempore! Nihil, et.</p>
+      <p :class="{active: isValid, valid: isDisabled}"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est perspiciatis culpa animi? Error totam laborum, doloremque maiores optio minus ipsa et laboriosam architecto assumenda nam labore ad in libero, animi cupiditate iusto veritatis. Cupiditate ipsa repellendus, earum pariatur quis nisi error voluptas aliquid, eum doloremque quas hic tempore! Nihil, et.</p>
     </div>
   </div>
   <p id="endword">by NikitaRudenko</p>
@@ -81,6 +83,7 @@
     margin-bottom: 20px;
     color: rgb(3, 114, 58);
     text-shadow: 0px 1px 10px rgb(20, 143, 81);
+    text-decoration: underline;
   }
   .valid{
     font-size: 28px;
