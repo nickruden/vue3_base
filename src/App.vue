@@ -3,6 +3,7 @@
   name: "App",
   data() {
     return {
+      cssClasses: "ex37",
     }
   },
   methods: {
@@ -16,7 +17,7 @@
     <!-- Ex. 1 -->
     <div>
       <h2>Ex. 1</h2>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est perspiciatis culpa animi? Error totam laborum, doloremque maiores optio minus ipsa et laboriosam architecto assumenda nam labore ad in libero, animi cupiditate iusto veritatis. Cupiditate ipsa repellendus, earum pariatur quis nisi error voluptas aliquid, eum doloremque quas hic tempore! Nihil, et.</p>
+      <p :class="cssClasses"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est perspiciatis culpa animi? Error totam laborum, doloremque maiores optio minus ipsa et laboriosam architecto assumenda nam labore ad in libero, animi cupiditate iusto veritatis. Cupiditate ipsa repellendus, earum pariatur quis nisi error voluptas aliquid, eum doloremque quas hic tempore! Nihil, et.</p>
     </div>
   </div>
   <p id="endword">by NikitaRudenko</p>
@@ -41,13 +42,13 @@
   #main div{
     margin-top: 10px;
   }
-  #main p{
+  /* #main p{
     font-size: 28px;
     margin-top: 20px;
     margin-bottom: 20px;
     color: rgb(3, 114, 58);
     text-shadow: 0px 1px 10px rgb(20, 143, 81);
-  }
+  } */
   #main h2{
     font-size: 40px;
     margin-top: 4px;
@@ -80,5 +81,13 @@
     margin-left: -670px;
     color: rgb(83, 100, 80);
     text-shadow: 0px 1px 10px rgb(128, 151, 141);
+  }
+
+  .ex37{
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(255, 181, 83);
+    text-shadow: 0px 1px 10px rgb(102, 60, 4);
   }
 </style>
