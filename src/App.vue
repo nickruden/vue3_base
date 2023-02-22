@@ -3,7 +3,21 @@
   name: "App",
   data() {
     return {
-      items: [1, -2, 3, -4, 5],
+      // Ex. 1
+      products: [
+			  {
+				  id: 1,
+				  name: 'product1',
+			  },
+			  {
+				  id: 2,
+				  name: 'product2',
+			  },
+			  {
+				  id: 3,
+				  name: 'product3',
+			  },
+		  ],
     }
   },
   methods: {
@@ -17,9 +31,9 @@
     <!-- Ex. 1 -->
     <div>
       <h2>Ex. 1</h2>
-      <template v-for="item in items">
-        <p v-if="item > 0">{{ item }}</p>
-      </template>
+      <ul v-for="product in products" :key="product.id">
+        <li>{{ product.name }}</li>
+      </ul>
     </div>
   </div>
   <p id="endword">by NikitaRudenko</p>
@@ -60,6 +74,7 @@
   #main ul{
     margin-top: 10px;
     text-align: left;
+    font-size: 24px;
   }
   #main table{
     font-size: 28px;
