@@ -4,50 +4,56 @@
   data() {
     return {
       // Ex. 1, 2
-      checkarr: []
+      radioarr: [],
+      propertyru: false,
+      propertyan: false,
+      propertysp: false
     }
   },
 
   methods: {
+    // Ex. 1, 2
+    choiseru() {
+      this.propertyru = true;
+      this.propertyan = false;
+      this.propertysp = false;
+    },
+    choisean() {
+      this.propertyru = false;
+      this.propertyan = true;
+      this.propertysp = false;
+    },
+    choisesp() {
+      this.propertyru = false;
+      this.propertyan = false;
+      this.propertysp = true;
+    },
   }
-}
+} 
 </script>
 
 <template>
   <div id="main">
-    <!-- Ex. 1 -->
+    <!-- Ex. 1, 2 -->
     <div>
-      <h2>Ex. 1</h2>
-      <p>Какие языки вы знаете?</p>
+      <h2>Ex. 1, 2</h2>
+      <p>Какой язык для вас родной?</p>
       <div class="checkboxs">
-        <label for="check1">Русский
-          <input type="checkbox" name="check1" v-model="checkarr" value="Русский"> 
+        <label for="rad1">Русский
+          <input type="radio" name="rad1" v-model="radioarr" value="Русский" @click="choiseru"> 
         </label> <br>
 
-        <label for="check2">Английский
-          <input type="checkbox" name="check2" v-model="checkarr" value="Английский"> 
+        <label for="rad2">Английский
+          <input type="radio" name="rad2" v-model="radioarr" value="Английский" @click="choisean"> 
         </label> <br>
 
-        <label for="check3">Испанский
-          <input type="checkbox" name="check3" v-model="checkarr" value="Испанский"> 
-        </label> <br>
-
-        <label for="check4">Немецкий
-          <input type="checkbox" name="check4" v-model="checkarr" value="Немецкий"> 
-        </label> <br>
-
-        <label for="check5">Французский 
-          <input type="checkbox" name="check5" v-model="checkarr" value="Французский"> 
+        <label for="rad3">Испанский
+          <input type="radio" name="rad3" v-model="radioarr" value="Испанский" @click="choisesp"> 
         </label> <br>
       </div>
-    </div>
-
-    <!-- Ex. 2 -->
-    <div>
-      <h2>Ex. 2</h2>
-      <ul v-for="item in checkarr">
-        <li>{{ item }}</li>
-      </ul>
+      <p  v-if="propertyru"> Ваш родной язык - Русский </p>
+      <p  v-if="propertyan"> Your native language is English </p>
+      <p  v-if="propertysp"> Tu lengua materna es el Españo </p>
     </div>
 
     <p id="endword">by NikitaRudenko</p>
