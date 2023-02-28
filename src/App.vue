@@ -15,7 +15,7 @@
   methods: {
     // Ex. 2
     textlist: function() {
-      this.textarr = this.text2.split();
+      this.textarr = this.text2.split(' ');
     }
   }
 }
