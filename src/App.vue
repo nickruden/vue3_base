@@ -4,50 +4,19 @@
   data() {
     return {
       // Ex. 1
-      num1: 0,
-      sqrt: 0,
+      text1: 'Напишите что-то своё',
 
       // Ex. 2
-      num2: 0,
-      num3: 0,
-      sum: 0,
-
-      // Ex. 3
-      text1: 'Нажми на кнопку',
-      text2: 'Поменяй меня',
-
-      // Ex. 4
-      fio: 'ФИО через пробел',
-      fname: 'Фамилия',
-      lname: 'Имя',
-      sname: 'Отчество'
+      text2: '',
+      textarr: []
     }
   },
+
   methods: {
-    // Ex. 1
-    sqrtnum1: function() {
-      this.sqrt = Math.sqrt(this.num1);
-    },
-    
     // Ex. 2
-    sumnum23: function() {
-      this.sum = Number(this.num2) + Number(this.num3);
-    },
-
-    // Ex. 3
-    swap: function() {
-      let t = this.text1
-      this.text1 = this.test2;
-      this.text2 = t;
-    },
-
-    // Ex. 4
-    outfio: function() {
-      let fios = this.fio.split(' ');
-      this.fname = fios[0];
-      this.lname = fios[1];
-      this.sname = fios[2];
-    } 
+    textlist: function() {
+      this.textarr = this.text2.split();
+    }
   }
 }
 </script>
@@ -57,37 +26,19 @@
     <!-- Ex. 1 -->
     <div>
       <h2>Ex. 1</h2>
-      <p> Квадратный корень введённого числа: {{ sqrt }}</p>
-      <input v-model="num1">
-      <button @click="sqrtnum1">Найти корень</button>
+      <textarea v-model="text1" cols="30" rows="5"></textarea>
+      <p>{{ text1 }}</p>
     </div>
 
     <!-- Ex. 2 -->
     <div>
       <h2>Ex. 2</h2>
-      <p> Сумма введённых чисел: {{ sum }}</p>
-      <input v-model="num2">
-      <input v-model="num3">
-      <button @click="sumnum23">Найти сумму</button>
+      <textarea v-model="text2" cols="30" rows="5"></textarea> <br>
+      <button @click="textlist">Вывести элементы</button>
+      <ul v-for="item in textarr">
+        <li>{{ item }}</li>
+      </ul>
     </div>
-
-   <!-- Ex. 3 -->
-   <div>
-    <h2>Ex. 3</h2>
-    <input class="inptext" v-model="text1"> <br>
-    <input class="inptext" v-model="text2"> <br>
-    <button @click="swap">Поменять</button>
-   </div>
-
-   <!-- Ex. 4 -->
-   <div>
-    <h2>Ex. 4</h2>
-    <p>Фамилия: {{ fname }}</p>
-    <p>Имя: {{ lname }}</p>
-    <p>Отчество: {{ sname }}</p>
-    <input class="inpfio" v-model="fio"> <br>
-    <button @click="outfio">Вывести</button>
-   </div>
 
     <p id="endword">by NikitaRudenko</p>
   </div>
@@ -152,7 +103,7 @@
     font-size: 20px;
     text-shadow: 0px 1px 10px rgb(108, 180, 84);
     background-color: rgb(66, 255, 198);
-    height: 50px;
+    height: 55px;
     width: 150px;
     border: 4px solid rgb(74, 197, 94);
     border-radius: 40px;
@@ -200,6 +151,16 @@
     color: rgb(131, 255, 214);
     text-shadow: 0px 1px 10px rgb(0, 255, 136);
     text-align: center;
+    margin-right: 10px;
+  }
+
+  #main textarea{
+    border-radius: 20px;
+    border: 4px solid rgb(238, 255, 250);
+    background-color: rgba(19, 151, 61, 0.616);
+    color: rgb(131, 255, 214);
+    text-shadow: 0px 1px 10px rgb(0, 255, 136);
+    padding: 10px;
     margin-right: 10px;
   }
 
