@@ -3,8 +3,8 @@
   name: "App",
   data() {
     return {
-      // Ex. 1
-      checked: false
+      // Ex. 1, 2
+      checkarr: []
     }
   },
 
@@ -18,8 +18,36 @@
     <!-- Ex. 1 -->
     <div>
       <h2>Ex. 1</h2>
-      <input type="checkbox" v-model="checked">
-      <p v-if="checked"> Вы поставили галочку </p>
+      <p>Какие языки вы знаете?</p>
+      <div class="checkboxs">
+        <label for="check1">Русский
+          <input type="checkbox" name="check1" v-model="checkarr" value="Русский"> 
+        </label> <br>
+
+        <label for="check2">Английский
+          <input type="checkbox" name="check2" v-model="checkarr" value="Английский"> 
+        </label> <br>
+
+        <label for="check3">Испанский
+          <input type="checkbox" name="check3" v-model="checkarr" value="Испанский"> 
+        </label> <br>
+
+        <label for="check4">Немецкий
+          <input type="checkbox" name="check4" v-model="checkarr" value="Немецкий"> 
+        </label> <br>
+
+        <label for="check5">Французский 
+          <input type="checkbox" name="check5" v-model="checkarr" value="Французский"> 
+        </label> <br>
+      </div>
+    </div>
+
+    <!-- Ex. 2 -->
+    <div>
+      <h2>Ex. 2</h2>
+      <ul v-for="item in checkarr">
+        <li>{{ item }}</li>
+      </ul>
     </div>
 
     <p id="endword">by NikitaRudenko</p>
@@ -146,6 +174,10 @@
     text-shadow: 0px 1px 10px rgb(0, 255, 136);
     padding: 10px;
     margin-right: 10px;
+  }
+
+  #main .checkboxs{
+    font-size: 20px;
   }
 
   #endword{
