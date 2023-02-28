@@ -24,20 +24,24 @@
     }
   },
   methods: {
+    // Ex. 1
     sqrtnum1: function() {
       this.sqrt = Math.sqrt(this.num1);
     },
     
+    // Ex. 2
     sumnum23: function() {
       this.sum = Number(this.num2) + Number(this.num3);
     },
 
+    // Ex. 3
     swap: function() {
       let t = this.text1
       this.text1 = this.test2;
       this.text2 = t;
     },
 
+    // Ex. 4
     outfio: function() {
       let fios = this.fio.split(' ');
       this.fname = fios[0];
