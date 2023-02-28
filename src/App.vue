@@ -3,57 +3,31 @@
   name: "App",
   data() {
     return {
-      // Ex. 1, 2
-      radioarr: [],
-      propertyru: false,
-      propertyan: false,
-      propertysp: false
+      // Ex. 1
+      selected: ' ',
     }
   },
 
   methods: {
-    // Ex. 1, 2
-    choiseru() {
-      this.propertyru = true;
-      this.propertyan = false;
-      this.propertysp = false;
-    },
-    choisean() {
-      this.propertyru = false;
-      this.propertyan = true;
-      this.propertysp = false;
-    },
-    choisesp() {
-      this.propertyru = false;
-      this.propertyan = false;
-      this.propertysp = true;
-    },
   }
 } 
 </script>
 
 <template>
   <div id="main">
-    <!-- Ex. 1, 2 -->
+    <!-- Ex. 1 -->
     <div>
-      <h2>Ex. 1, 2</h2>
-      <p>Какой язык для вас родной?</p>
-      <div class="checkboxs">
-        <label for="rad1">Русский
-          <input type="radio" name="rad1" v-model="radioarr" value="Русский" @click="choiseru"> 
-        </label> <br>
-
-        <label for="rad2">Английский
-          <input type="radio" name="rad2" v-model="radioarr" value="Английский" @click="choisean"> 
-        </label> <br>
-
-        <label for="rad3">Испанский
-          <input type="radio" name="rad3" v-model="radioarr" value="Испанский" @click="choisesp"> 
-        </label> <br>
-      </div>
-      <p  v-if="propertyru"> Ваш родной язык - Русский </p>
-      <p  v-if="propertyan"> Your native language is English </p>
-      <p  v-if="propertysp"> Tu lengua materna es el Españo </p>
+      <h2>Ex. 1</h2>
+      <p>В каком городе вы живёте?</p>
+        <select v-model="selected">
+		      <option>Москва</option>
+		      <option>Санкт-Петерург</option>
+		      <option>Краснодар</option>
+          <option>Казань</option>
+          <option>Новосибирск</option>
+	      </select>
+        
+	      <p>Вы живёте в городе - {{ selected }}</p>
     </div>
 
     <p id="endword">by NikitaRudenko</p>
@@ -184,6 +158,25 @@
 
   #main .checkboxs{
     font-size: 20px;
+  }
+
+  #main select{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    border: 4px solid rgb(238, 255, 250);
+    background-color: rgba(19, 151, 61, 0.616);
+    color: rgb(131, 255, 214);
+    font-size: 20px;
+    text-shadow: 0px 1px 10px rgb(0, 255, 136);
+    padding: 10px;
+    margin-right: 10px;
+  }
+  #main select:hover{
+    border-radius: 20px;
+    border: 4px solid rgb(238, 255, 250);
+    background-color: rgba(38, 116, 64, 0.616);
+    color: rgb(131, 255, 214);
   }
 
   #endword{
