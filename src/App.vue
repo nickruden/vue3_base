@@ -4,19 +4,11 @@
   data() {
     return {
       // Ex. 1
-      text1: 'Напишите что-то своё',
-
-      // Ex. 2
-      text2: '',
-      textarr: []
+      checked: false
     }
   },
 
   methods: {
-    // Ex. 2
-    textlist: function() {
-      this.textarr = this.text2.split(' ');
-    }
   }
 }
 </script>
@@ -26,18 +18,8 @@
     <!-- Ex. 1 -->
     <div>
       <h2>Ex. 1</h2>
-      <textarea v-model="text1" cols="30" rows="5"></textarea>
-      <p>{{ text1 }}</p>
-    </div>
-
-    <!-- Ex. 2 -->
-    <div>
-      <h2>Ex. 2</h2>
-      <textarea v-model="text2" cols="30" rows="5"></textarea> <br>
-      <button @click="textlist">Вывести элементы</button>
-      <ul v-for="item in textarr">
-        <li>{{ item }}</li>
-      </ul>
+      <input type="checkbox" v-model="checked">
+      <p v-if="checked"> Вы поставили галочку </p>
     </div>
 
     <p id="endword">by NikitaRudenko</p>
@@ -62,12 +44,13 @@
   }
   #main p{
     font-size: 24px;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 10px;
   }
   #main h2{
     font-size: 36px;
     margin-top: 4px;
+    margin-bottom: 10px;
     text-decoration: underline;
   }
   #main .p{
@@ -155,7 +138,6 @@
   }
 
   #main textarea{
-    margin-top: 10px;
     margin-bottom: -10px;
     border-radius: 20px;
     border: 4px solid rgb(238, 255, 250);
