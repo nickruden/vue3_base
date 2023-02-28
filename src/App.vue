@@ -155,6 +155,8 @@
   }
 
   #main textarea{
+    margin-top: 10px;
+    margin-bottom: -10px;
     border-radius: 20px;
     border: 4px solid rgb(238, 255, 250);
     background-color: rgba(19, 151, 61, 0.616);
