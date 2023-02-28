@@ -3,30 +3,86 @@
   name: "App",
   data() {
     return {
-      // Ex. 1, 2, 3
-      message: "Что-то написано...",
-      num: 2,
+      // Ex. 1
+      num1: 0,
+      sqrt: 0,
+
+      // Ex. 2
+      num2: 0,
+      num3: 0,
+      sum: 0,
+
+      // Ex. 3
+      text1: 'Нажми на кнопку',
+      text2: 'Поменяй меня',
+
+      // Ex. 4
+      fio: 'ФИО через пробел',
+      fname: 'Фамилия',
+      lname: 'Имя',
+      sname: 'Отчество'
     }
   },
   methods: {
+    sqrtnum1: function() {
+      this.sqrt = Math.sqrt(this.num1);
+    },
+    
+    sumnum23: function() {
+      this.sum = Number(this.num2) + Number(this.num3);
+    },
+
+    swap: function() {
+      let t = this.text1
+      this.text1 = this.test2;
+      this.text2 = t;
+    },
+
+    outfio: function() {
+      let fios = this.fio.split(' ');
+      this.fname = fios[0];
+      this.lname = fios[1];
+      this.sname = fios[2];
+    } 
   }
 }
 </script>
 
 <template>
   <div id="main">
-    <!-- Ex. 1, 2 -->
+    <!-- Ex. 1 -->
     <div>
-      <h2>Ex. 1, 2</h2>
-      <input v-model="message">
-      <p class="pinput">{{ message }}</p>
+      <h2>Ex. 1</h2>
+      <p> Квадратный корень введённого числа: {{ sqrt }}</p>
+      <input v-model="num1">
+      <button @click="sqrtnum1">Найти корень</button>
+    </div>
+
+    <!-- Ex. 2 -->
+    <div>
+      <h2>Ex. 2</h2>
+      <p> Сумма введённых чисел: {{ sum }}</p>
+      <input v-model="num2">
+      <input v-model="num3">
+      <button @click="sumnum23">Найти сумму</button>
     </div>
 
    <!-- Ex. 3 -->
    <div>
     <h2>Ex. 3</h2>
-    <input v-model="num">
-    <p>Квадрат введённого числа: {{ num ** 2 }}</p>
+    <input class="inptext" v-model="text1"> <br>
+    <input class="inptext" v-model="text2"> <br>
+    <button @click="swap">Поменять</button>
+   </div>
+
+   <!-- Ex. 4 -->
+   <div>
+    <h2>Ex. 4</h2>
+    <p>Фамилия: {{ fname }}</p>
+    <p>Имя: {{ lname }}</p>
+    <p>Отчество: {{ sname }}</p>
+    <input class="inpfio" v-model="fio"> <br>
+    <button @click="outfio">Вывести</button>
    </div>
 
     <p id="endword">by NikitaRudenko</p>
@@ -50,12 +106,12 @@
     margin-bottom: 40px;
   }
   #main p{
-    font-size: 28px;
+    font-size: 24px;
     margin-top: 20px;
     margin-bottom: 10px;
   }
   #main h2{
-    font-size: 40px;
+    font-size: 36px;
     margin-top: 4px;
     text-decoration: underline;
   }
@@ -106,7 +162,7 @@
   
   #main input{
     font-size: 20px;
-    width: 300px;
+    width: 100px;
     height: 40px;
     border-radius: 20px;
     border: 4px solid rgb(238, 255, 250);
@@ -114,6 +170,33 @@
     color: rgb(131, 255, 214);
     text-shadow: 0px 1px 10px rgb(0, 255, 136);
     text-align: center;
+    margin-right: 10px;
+  }
+  #main .inptext{
+    margin-top: 10px;
+    font-size: 20px;
+    width: 400px;
+    height: 40px;
+    border-radius: 20px;
+    border: 4px solid rgb(238, 255, 250);
+    background-color: rgba(19, 151, 61, 0.616);
+    color: rgb(131, 255, 214);
+    text-shadow: 0px 1px 10px rgb(0, 255, 136);
+    text-align: center;
+    margin-right: 10px;
+  }
+  #main .inpfio{
+    margin-top: 10px;
+    font-size: 20px;
+    width: 400px;
+    height: 40px;
+    border-radius: 20px;
+    border: 4px solid rgb(238, 255, 250);
+    background-color: rgba(19, 151, 61, 0.616);
+    color: rgb(131, 255, 214);
+    text-shadow: 0px 1px 10px rgb(0, 255, 136);
+    text-align: center;
+    margin-right: 10px;
   }
 
   #endword{
