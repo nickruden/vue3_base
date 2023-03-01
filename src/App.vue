@@ -3,74 +3,41 @@
   name: "App",
   data() {
     return {
-      // Ex. 1
-      text1: ' ',
-
-      // Ex. 2
-      text2: 'Просто какой-то текст',
-
-      // Ex. 3
-      pushed: false,
-      text3: ' ',
+      // Ex. 1, 2
+      arritem: ' ',
+      arr: ['a', 'b', 'c', 'd', 'e']
     }
   },
 
   methods: {
     // Ex. 1
-    submit: function () {
-      this.text1 = this.$refs.text1.value;
+    addlast: function () {
+      this.arr.push(this.arritem);
     }, 
 
     // Ex. 2
-    ctrl: function (event) {
-      if (event.ctrlKey) {
-        this.pushed = true;
-      }
+    addfirst: function() {
+      this.arr.unshift(this.arritem)
     },
-
-    // Ex. 3
-    right: function (event) {
-      if (!event.ctrlKey) {
-        this.text3 = 'Правая кнопка мыши';
-      }
-    },
-    left: function (event) {
-      if (!event.ctrlKey) {
-        this.text3 = 'Левая кнопка мыши';
-      }
-    },
-    middle: function (event) {
-      if (!event.ctrlKey) {
-        this.text3 = 'Средняя кнопка мыши';
-      }
-    }
   }
 }
 </script>
 
 <template>
   <div id="main">
-    <!-- Ex. 1 -->
+    <!-- Ex. 1, 2 -->
     <div>
-      <h2>Ex. 1</h2>
-      <input type="text" @keyup.enter="submit" ref="text1">
-      <p>{{ text1 }}</p>
-    </div>
+      <h2>Ex. 1, 2</h2>
+      <label class="p"> Добавте элемент в начало или в конец массива:
+        <input v-model="arritem">
+      </label>
 
-    <!-- Ex. 2 -->
-    <div>
-      <h2>Ex. 2</h2>
-      <a href="#" @click="ctrl"> Ссылка </a>
-      <p v-if="pushed">{{ text2 }}</p>
+      <ul>
+        <li v-for="item in arr">{{ item }}</li>
+      </ul>
+      <button @click="addlast">Добавить в конец</button>
+      <button @click="addfirst">Добавить в начало</button>
     </div>
-
-    <!-- Ex. 3 -->
-    <div>
-      <h2>Ex. 3</h2>
-      <a href="#" @click.right="right" @click.left="left" @click.middle="middle"> Ссылка </a>
-      <p>{{ text3 }}</p>
-    </div>
-
     <p id="endword">by NikitaRudenko</p>
   </div>
 </template>
@@ -103,7 +70,7 @@
     text-decoration: underline;
   }
   #main .p{
-    font-size: 28px;
+    font-size: 24px;
   }
   #main .pinput{
     text-transform: uppercase;
@@ -135,8 +102,8 @@
     font-size: 20px;
     text-shadow: 0px 1px 10px rgb(108, 180, 84);
     background-color: rgb(66, 255, 198);
-    height: 55px;
-    width: 150px;
+    height: 70px;
+    width: 170px;
     border: 4px solid rgb(74, 197, 94);
     border-radius: 40px;
   }
