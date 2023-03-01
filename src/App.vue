@@ -10,8 +10,8 @@
       return {
         // Ex. 1
         name: 'Anthony', 
-        salary: '10000',
-        age: '25'
+        salary: 10000,
+        age: 25
       }
     }
   }

@@ -2,6 +2,13 @@
  export default{
   name: "Employee",
 
+  // Ex. 1
+  props: {
+    name: String,
+    salary: Number,
+    age: Number
+  },
+
   data() {
     return {
       
