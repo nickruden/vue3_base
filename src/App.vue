@@ -11,7 +11,7 @@
 
   methods: {
     // Ex. 1
-    dellitem: function (index) {
+    delitem: function (index) {
       this.arr.splice(index, 1);
     }
   }
@@ -24,7 +24,7 @@
     <div>
       <h2>Ex. 1</h2>
       <ul>
-        <li v-for="(item, index) in arr" @click="dellitem(index)">{{ item }}</li>
+        <li v-for="(item, index) in arr" @click="delitem(index)">{{ item }}</li>
       </ul>
     </div>
 
