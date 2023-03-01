@@ -3,26 +3,17 @@
   name: "App",
   data() {
     return {
-      // Ex. 1
-      selected1: ' ',
-      week: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
-
-      // Ex. 2
-      selected21: ' ',
-      selected22: ' ',
-      selected23: ' ',
-      days: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
-      months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-      years: ['2023', '2022','2021', '2020', '2019','2018', '2017', '2016', '2015', '2014']
+      // Ex. 1, 2
+      disable: false,
+      block: 'Блок инпут',
+      unblock: 'Разбл инпут'
     }
   },
 
   methods: {
-    today: function() {
-      const date = new Date();
-      this.selected21 = String(date.getDate());
-      this.selected22 = String(date.getMonth() + 1);
-      this.selected23 = String(date.getFullYear());
+    // Ex. 1, 2
+    blockinp: function() {
+      this.disable = !this.disable;
     }
   }
 } 
@@ -30,30 +21,13 @@
 
 <template>
   <div id="main">
-    <!-- Ex. 1 -->
+    <!-- Ex. 1, 2 -->
     <div>
-      <h2>Ex. 1</h2>
-      <p>Выберите день недели:</p>
-        <select v-model="selected1">
-		      <option v-for="day in week">{{ day }}</option>
-	      </select>
-    </div>
+      <h2>Ex. 1, 2</h2>
+      <input type="name" :disabled="disable">
+      <button @click="blockinp"> {{!disable ? block : unblock }}</button>
 
-    <!-- Ex. 2 -->
-    <div>
-      <h2>Ex. 2</h2>
-      <p>Выберите день, месяц и год:</p>
-        <select v-model="selected21">
-          <option v-for="day in days">{{ day }}</option>
-        </select>
-        <select v-model="selected22">
-          <option v-for="month in months">{{ month }}</option>
-        </select>
-        <select v-model="selected23">
-          <option v-for="year in years">{{ year }}</option>
-        </select>
-        <p>{{ selected21 + ' / ' + selected22 + ' / ' + selected23 }}</p>
-        <button @click="today">Сегодня</button>
+      <input type="checkbox" @click="blockinp">
     </div>
 
     <p id="endword">by NikitaRudenko</p>
