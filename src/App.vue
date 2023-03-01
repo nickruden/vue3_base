@@ -10,7 +10,8 @@
 
 
 <template>
-  
+  <!-- Ex. 1 -->
+  <Employee fname="Josh" lname="Smith" age="30 y. o." />
 </template>
 
 
