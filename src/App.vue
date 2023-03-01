@@ -11,34 +11,23 @@
 
   methods: {
     // Ex. 1
-    addlast: function () {
-      this.arr.push(this.arritem);
-    }, 
-
-    // Ex. 2
-    addfirst: function() {
-      this.arr.unshift(this.arritem)
-    },
+    dellitem: function (index) {
+      this.arr.splice(index, 1);
+    }
   }
 }
 </script>
 
 <template>
   <div id="main">
-    <!-- Ex. 1, 2 -->
+    <!-- Ex. 1 -->
     <div>
-      <h2>Ex. 1, 2</h2>
-      <label class="p"> Добавте элемент в начало или в конец массива:
-        <input v-model="arritem">
-      </label>
-
+      <h2>Ex. 1</h2>
       <ul>
-        <li v-for="item in arr">{{ item }}</li>
+        <li v-for="(item, index) in arr" @click="dellitem(index)">{{ item }}</li>
       </ul>
-      <button @click="addlast">Добавить в конец</button>
-      <button @click="addfirst">Добавить в начало</button>
     </div>
-    
+
     <p id="endword">by NikitaRudenko</p>
   </div>
 </template>
@@ -81,6 +70,9 @@
     text-align: left;
     margin-left: 500px;
     font-size: 24px;
+  }
+  #main li{
+    cursor: pointer;
   }
   #main table{
     font-size: 28px;
