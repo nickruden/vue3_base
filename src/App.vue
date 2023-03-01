@@ -10,18 +10,21 @@
 				  name: 'name1',
 				  salary: 100,
 				  age: 30,
+          isEdit: false,
 			  },
 			  {
 				  id: 2,
 				  name: 'name2',
 				  salary: 200,
 				  age: 40,
+          isEdit: false,
 			  },
 			  {
 				  id: 3,
 				  name: 'name3',
 				  salary: 300,
 				  age: 50,
+          isEdit: false,
 			  },
 		  ],
     }
@@ -31,6 +34,14 @@
     // Ex. 1
     deluser: function(id) {
       this.users = this.users.filter((user) => { return user.id !== id; } );
+    },
+
+    edituser(user) {
+      user.isEdit = true;
+    },
+
+    saveuser(user) {
+      user.isEdit = false;
     }
   }
 }
@@ -44,20 +55,29 @@
       <table>
         <thead>
           <tr>
-            <td>Id</td>
             <td>Name</td>
             <td>Salary</td>
             <td>Age</td>
             <td>Delete</td>
+            <td>Edit</td>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(user, index) in users" :key="user.id">
-            <td>{{ user.id }}</td>
-            <td>{{ user.name }}</td>
-            <td>{{ user.salary }}</td>
-            <td>{{ user.age }}</td>
-            <td><a href="#" @click="deluser(user.id)">del</a></td>
+            <template v-if="!user.isEdit">
+              <td>{{ user.name }}</td>
+              <td>{{ user.salary }}</td>
+              <td>{{ user.age }}</td>
+              <td><a href="#" @click="deluser(user.id)">del</a></td>
+              <td><a href="#" @click="edituser(user)">edit</a></td>
+            </template>
+
+            <template v-if="user.isEdit">
+              <td><input v-model="user.name"></td>
+              <td><input v-model="user.salary"></td>
+              <td><input v-model="user.age"></td>
+              <td><a href="#" @click="saveuser(user)">save</a></td>
+            </template>
           </tr>
         </tbody>
       </table>
