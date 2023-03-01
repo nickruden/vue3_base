@@ -56,7 +56,6 @@
         <button @click="today">Сегодня</button>
     </div>
 
-
     <p id="endword">by NikitaRudenko</p>
   </div>
 </template>
