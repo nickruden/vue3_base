@@ -3,31 +3,72 @@
   name: "App",
   data() {
     return {
-      // Ex. 1, 2
-      disable: false,
-      block: 'Блок инпут',
-      unblock: 'Разбл инпут'
+      // Ex. 1
+      text1: ' ',
+
+      // Ex. 2
+      text2: 'Просто какой-то текст',
+
+      // Ex. 3
+      pushed: false,
+      text3: ' ',
     }
   },
 
   methods: {
-    // Ex. 1, 2
-    blockinp: function() {
-      this.disable = !this.disable;
+    // Ex. 1
+    submit: function () {
+      this.text1 = this.$refs.text1.value;
+    }, 
+
+    // Ex. 2
+    ctrl: function (event) {
+      if (event.ctrlKey) {
+        this.pushed = true;
+      }
+    },
+
+    // Ex. 3
+    right: function (event) {
+      if (!event.ctrlKey) {
+        this.text3 = 'Правая кнопка мыши';
+      }
+    },
+    left: function (event) {
+      if (!event.ctrlKey) {
+        this.text3 = 'Левая кнопка мыши';
+      }
+    },
+    middle: function (event) {
+      if (!event.ctrlKey) {
+        this.text3 = 'Средняя кнопка мыши';
+      }
     }
   }
-} 
+}
 </script>
 
 <template>
   <div id="main">
-    <!-- Ex. 1, 2 -->
+    <!-- Ex. 1 -->
     <div>
-      <h2>Ex. 1, 2</h2>
-      <input type="name" :disabled="disable">
-      <button @click="blockinp"> {{!disable ? block : unblock }}</button>
+      <h2>Ex. 1</h2>
+      <input type="text" @keyup.enter="submit" ref="text1">
+      <p>{{ text1 }}</p>
+    </div>
 
-      <input type="checkbox" @click="blockinp">
+    <!-- Ex. 2 -->
+    <div>
+      <h2>Ex. 2</h2>
+      <a href="#" @click="ctrl"> Ссылка </a>
+      <p v-if="pushed">{{ text2 }}</p>
+    </div>
+
+    <!-- Ex. 3 -->
+    <div>
+      <h2>Ex. 3</h2>
+      <a href="#" @click.right="right" @click.left="left" @click.middle="middle"> Ссылка </a>
+      <p>{{ text3 }}</p>
     </div>
 
     <p id="endword">by NikitaRudenko</p>
@@ -108,7 +149,7 @@
   
   #main input{
     font-size: 20px;
-    width: 100px;
+    max-width: 500px;
     height: 40px;
     border-radius: 20px;
     border: 4px solid rgb(238, 255, 250);
