@@ -3,7 +3,7 @@
   name: "App",
   data() {
     return {
-      // Ex. 1, 2
+      // Ex. 1
       users: [
 			  {
 				  id: 1,
