@@ -9,7 +9,7 @@
     data() {
       return {
         // Ex. 1
-        fname: 'Anthony', 
+        name: 'Anthony', 
         salary: '10000',
         age: '25'
       }
@@ -20,7 +20,7 @@
 
 <template>
   <!-- Ex. 1 -->
-  <Employee :fname="fname" :salary="salary" :age="age" />
+  <Employee :name="name" :salary="salary" :age="age" />
 </template>
 
 
