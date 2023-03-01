@@ -1,8 +1,9 @@
 <script>
  export default{
   name: "Employee",
-  // Ex. 2
-  props: ['fname', 'lname', 'age'],
+
+  // Ex. 1
+  props: ['arr'],
 
   data() {
     return {
@@ -19,10 +20,13 @@
 
 <template>
     <div id="main">
-        <h2>Ex. 2</h2>
-        <p>{{ fname }}</p>
-        <p>{{ lname }}</p>
-        <p>{{ age }}</p>
+        <!-- Ex. 1 -->
+        <h2>Ex. 1</h2>
+        <ul>
+            <li v-for="item in arr">{{ item }}</li>
+        </ul>
+
+        <p id="endword">by NikitaRudenko</p>
     </div>
 </template>
 
@@ -53,5 +57,17 @@
     margin-top: 4px;
     margin-bottom: 10px;
     text-decoration: underline;
+  }
+  #main ul{
+    margin-top: 10px;
+    text-align: left;
+    margin-left: 500px;
+    font-size: 24px;
+  }
+
+  #endword{
+    font-size: 30px;
+    color: rgb(83, 100, 80);
+    text-shadow: 0px 1px 10px rgb(128, 151, 141);
   }
 </style>

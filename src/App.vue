@@ -11,7 +11,7 @@
 
 <template>
   <!-- Ex. 1 -->
-  <Employee fname="Josh" lname="Smith" age="30 y. o." />
+  <Employee :arr="['a', 'b', 'c', 'd', 'e']" />
 </template>
 
 
