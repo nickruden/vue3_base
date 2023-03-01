@@ -4,6 +4,15 @@
   export default{
     components: {
       Employee
+    },
+
+    data() {
+      return {
+        // Ex. 1
+        fname: 'Anthony', 
+        salary: '10000',
+        age: '25'
+      }
     }
   }
 </script>
@@ -11,7 +20,7 @@
 
 <template>
   <!-- Ex. 1 -->
-  <Employee :arr="['a', 'b', 'c', 'd', 'e']" />
+  <Employee :fname="fname" :salary="salary" :age="age" />
 </template>
 
 

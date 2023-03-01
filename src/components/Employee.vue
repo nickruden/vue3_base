@@ -2,9 +2,6 @@
  export default{
   name: "Employee",
 
-  // Ex. 1
-  props: ['arr'],
-
   data() {
     return {
       
@@ -19,15 +16,7 @@
 
 
 <template>
-    <div id="main">
-        <!-- Ex. 1 -->
-        <h2>Ex. 1</h2>
-        <ul>
-            <li v-for="item in arr">{{ item }}</li>
-        </ul>
 
-        <p id="endword">by NikitaRudenko</p>
-    </div>
 </template>
 
 
