@@ -38,6 +38,7 @@
       <button @click="addlast">Добавить в конец</button>
       <button @click="addfirst">Добавить в начало</button>
     </div>
+    
     <p id="endword">by NikitaRudenko</p>
   </div>
 </template>
