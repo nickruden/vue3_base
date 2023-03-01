@@ -4,15 +4,33 @@
   data() {
     return {
       // Ex. 1, 2
-      arritem: ' ',
-      arr: ['a', 'b', 'c', 'd', 'e']
+      users: [
+			  {
+				  id: 1,
+				  name: 'name1',
+				  salary: 100,
+				  age: 30,
+			  },
+			  {
+				  id: 2,
+				  name: 'name2',
+				  salary: 200,
+				  age: 40,
+			  },
+			  {
+				  id: 3,
+				  name: 'name3',
+				  salary: 300,
+				  age: 50,
+			  },
+		  ],
     }
   },
 
   methods: {
     // Ex. 1
-    delitem: function (index) {
-      this.arr.splice(index, 1);
+    deluser: function(id) {
+      this.users = this.users.filter((user) => { return user.id !== id; } );
     }
   }
 }
@@ -23,9 +41,26 @@
     <!-- Ex. 1 -->
     <div>
       <h2>Ex. 1</h2>
-      <ul>
-        <li v-for="(item, index) in arr" @click="delitem(index)">{{ item }}</li>
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Salary</td>
+            <td>Age</td>
+            <td>Delete</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(user, index) in users" :key="user.id">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.salary }}</td>
+            <td>{{ user.age }}</td>
+            <td><a href="#" @click="deluser(user.id)">del</a></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <p id="endword">by NikitaRudenko</p>
@@ -75,9 +110,16 @@
     cursor: pointer;
   }
   #main table{
+    margin: 0 auto;
+    margin-top: 20px;
     font-size: 28px;
     border: 5px solid rgb(30, 97, 69);
     padding: 10px;
+  }
+  #main td{
+  padding: 10px;
+  margin: 10px;
+  border-radius: 3px;
   }
   #main a{
     font-size: 24px;
