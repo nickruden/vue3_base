@@ -26,11 +26,15 @@
 
 
 <template>
-  <!-- Ex. 1 -->
   <div id="main">
-    <h2>Ex. 1</h2>
-    <button @click="btn1">Func1</button>
-    <button @click="btn2">Func2</button>
+    <!-- Ex. 1 -->
+    <div>
+      <h2>Ex. 1</h2>
+      <button @click="btn1">Func1</button>
+      <button @click="btn2">Func2</button>
+    </div>
+
+    <p id="endword">by NikitaRudenko</p>
   </div>
 </template>
 
@@ -87,7 +91,7 @@
     border: 4px solid rgb(66, 255, 198);
     text-shadow: 0px 1px 10px rgb(160, 248, 207);
   }
-  
+
   #endword{
     font-size: 30px;
     color: rgb(83, 100, 80);
