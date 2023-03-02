@@ -2,13 +2,13 @@
 import Employee from './components/Employee.vue'
 
 // Ex. 1
-import AddUsers from './components/AddUsers.vue'
+import AddUser from './components/AddUser.vue'
 export default {
   components: {
     Employee, 
     
     // Ex. 1
-    AddUsers
+    AddUser
   },
   data() {
     return {
@@ -48,7 +48,7 @@ export default {
 <template>
 
   <!-- Ex. 1 -->
-  <AddUsers @add="add" />
+  <AddUser @add="add" />
 </template>
 
 
