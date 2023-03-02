@@ -3,6 +3,9 @@
   name: "Employee",
   props: [],
 
+  // Ex. 1
+  emits: ['show1', 'show2'],
+
   data() {
     return {
       
@@ -10,14 +13,25 @@
   },
 
   methods: {
-    
+    // Ex. 1
+    btn1() {
+      return this.$emit('show1');
+    },
+    btn2() {
+      return this.$emit('show2');
+    }
   }
 }
 </script>
 
 
 <template>
-
+  <!-- Ex. 1 -->
+  <div id="main">
+    <h2>Ex. 1</h2>
+    <button @click="btn1">Func1</button>
+    <button @click="btn2">Func2</button>
+  </div>
 </template>
 
 
@@ -55,6 +69,25 @@
     font-size: 24px;
   }
 
+  #main button{
+    margin-top: 20px;
+    margin-right: 20px;
+    color: rgb(26, 151, 9);
+    font-size: 20px;
+    text-shadow: 0px 1px 10px rgb(108, 180, 84);
+    background-color: rgb(66, 255, 198);
+    height: 70px;
+    width: 170px;
+    border: 4px solid rgb(74, 197, 94);
+    border-radius: 40px;
+  }
+  #main button:hover{
+    color: rgb(57, 107, 41);
+    background-color: rgb(20, 167, 45);
+    border: 4px solid rgb(66, 255, 198);
+    text-shadow: 0px 1px 10px rgb(160, 248, 207);
+  }
+  
   #endword{
     font-size: 30px;
     color: rgb(83, 100, 80);
