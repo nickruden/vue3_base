@@ -1,10 +1,16 @@
 <script>
  export default{
   name: "Employee",
-  props: [],
+  
+  // Ex. 1
+  props: {
+    id: Number,
+    name: String,
+    surn: String
+  },
 
   // Ex. 1
-  emits: ['fruits'],
+  emits: ['del'],
 
   data() {
     return {
@@ -20,20 +26,17 @@
 
 
 <template>
-  <div id="main">
-    <!-- Ex. 1 -->
-    <div>
-      <h2>Ex. 1</h2>
-      <button @click="$emit('fruits', 'яблоки', 'апельсины')">Передать данные</button>
-    </div>
+  <!-- Ex. 1 -->
+  <p>{{ name }}</p>
+  <p>{{ surn }}</p>
 
-    <p id="endword">by NikitaRudenko</p>
-  </div>
+  <button @click="$emit('del', id)">del</button> <br>
 </template>
 
 
 <style>
-    #main{
+  body{
+    margin: 0 auto;
     margin-top: 50px;
     margin-bottom: 50px;
     background-color: rgb(43, 221, 117);
@@ -48,8 +51,8 @@
     margin-top: 10px;
     margin-bottom: 40px;
   }
-  #main p{
-    font-size: 24px;
+  p{
+    font-size: 28px;
     margin-top: 10px;
     margin-bottom: 10px;
   }
@@ -66,19 +69,17 @@
     font-size: 24px;
   }
 
-  #main button{
-    margin-top: 20px;
-    margin-right: 20px;
+  button{
     color: rgb(26, 151, 9);
     font-size: 20px;
     text-shadow: 0px 1px 10px rgb(108, 180, 84);
     background-color: rgb(66, 255, 198);
-    height: 80px;
-    width: 190px;
+    height: 50px;
+    width: 150px;
     border: 4px solid rgb(74, 197, 94);
     border-radius: 40px;
   }
-  #main button:hover{
+  button:hover{
     color: rgb(57, 107, 41);
     background-color: rgb(20, 167, 45);
     border: 4px solid rgb(66, 255, 198);
