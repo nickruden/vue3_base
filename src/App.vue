@@ -14,13 +14,8 @@
 
     methods: {
       // Ex. 1
-      func1(name) {
-        console.log(name);
-      },
-
-      // Ex. 2
-      func2(name, salary) {
-        console.log(name, salary);
+      func(apple, orange) {
+        alert("Я люблю зелёные " + apple + " и оранжевые " + orange);
       }
     }
   }
@@ -28,8 +23,8 @@
 
 
 <template>
-  <!-- Ex. 1, 2 -->
-  <Employee @username="func1" @name_salary="func2"/>
+  <!-- Ex. 1 -->
+  <Employee @fruits="func"/>
 </template>
 
 

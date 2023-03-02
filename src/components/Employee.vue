@@ -4,21 +4,18 @@
   props: [],
 
   // Ex. 1
-  emits: ['username', 'name_salary'],
+  emits: ['fruits'],
 
   data() {
     return {
-      
+
     }
   },
 
   methods: {
     // Ex. 1
-    btn1() {
-      this.$emit('username', 'Иван');
-    },
-    btn2() {
-      return this.$emit('name_salary', 'Олег', '100000');
+    btn() {
+      this.$emit('fruits', 'яблоки', 'апельсины');
     }
   }
 }
@@ -30,13 +27,7 @@
     <!-- Ex. 1 -->
     <div>
       <h2>Ex. 1</h2>
-      <button @click="btn1">Передать имя</button>
-    </div>
-
-    <!-- Ex. 2 -->
-    <div>
-      <h2>Ex. 2</h2>
-      <button @click="btn2">Передать имя и зарплату</button>
+      <button @click="btn">Передать данные</button>
     </div>
 
     <p id="endword">by NikitaRudenko</p>
