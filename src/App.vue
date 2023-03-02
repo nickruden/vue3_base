@@ -1,11 +1,18 @@
 <script>
 import Employee from './components/Employee.vue'
+
+// Ex. 1
+import AddUsers from './components/AddUsers.vue'
 export default {
   components: {
-    Employee
+    Employee, 
+    
+    // Ex. 1
+    AddUsers
   },
   data() {
     return {
+
       // Ex. 1
       users: [
         {
@@ -27,29 +34,21 @@ export default {
     }
   },
   methods: {
+
     // Ex. 1
-    change(id, name, surn){
-      this.users = this.users.map((user) => {
-        if(user.id === id){
-          user.name = name;
-          user.surn = surn;
-        }
-        return user;
-      });
+    add(name, surn) {
+      let id = this.users.length + 1;
+      this.users.push({id, name, surn});
+      console.log(this.users)
     }
   }
 }
 </script>
 
 <template>
-    <!-- Ex. 1 -->
-  <Employee v-for="user in users"
-		:id="user.id"
-		:name="user.name"
-		:surn="user.surn"
-		:key="user.id"
 
-    @changeuser="change" />
+  <!-- Ex. 1 -->
+  <AddUsers @add="add" />
 </template>
 
 
