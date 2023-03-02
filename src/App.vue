@@ -13,12 +13,14 @@
     },
 
     methods: {
-      func1() {
-        alert("Упражнение №1. Функция 1");
+      // Ex. 1
+      func1(name) {
+        console.log(name);
       },
 
-      func2() {
-        alert("Упражнение №1. Функция 2");
+      // Ex. 2
+      func2(name, salary) {
+        console.log(name, salary);
       }
     }
   }
@@ -26,8 +28,8 @@
 
 
 <template>
-  <!-- Ex. 1 -->
-  <Employee @show1="func1" @show2="func2"/>
+  <!-- Ex. 1, 2 -->
+  <Employee @username="func1" @name_salary="func2"/>
 </template>
 
 

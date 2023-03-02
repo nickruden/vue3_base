@@ -4,7 +4,7 @@
   props: [],
 
   // Ex. 1
-  emits: ['show1', 'show2'],
+  emits: ['username', 'name_salary'],
 
   data() {
     return {
@@ -15,10 +15,10 @@
   methods: {
     // Ex. 1
     btn1() {
-      return this.$emit('show1');
+      this.$emit('username', 'Иван');
     },
     btn2() {
-      return this.$emit('show2');
+      return this.$emit('name_salary', 'Олег', '100000');
     }
   }
 }
@@ -30,8 +30,13 @@
     <!-- Ex. 1 -->
     <div>
       <h2>Ex. 1</h2>
-      <button @click="btn1">Func1</button>
-      <button @click="btn2">Func2</button>
+      <button @click="btn1">Передать имя</button>
+    </div>
+
+    <!-- Ex. 2 -->
+    <div>
+      <h2>Ex. 2</h2>
+      <button @click="btn2">Передать имя и зарплату</button>
     </div>
 
     <p id="endword">by NikitaRudenko</p>
@@ -80,8 +85,8 @@
     font-size: 20px;
     text-shadow: 0px 1px 10px rgb(108, 180, 84);
     background-color: rgb(66, 255, 198);
-    height: 70px;
-    width: 170px;
+    height: 80px;
+    width: 190px;
     border: 4px solid rgb(74, 197, 94);
     border-radius: 40px;
   }
