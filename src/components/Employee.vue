@@ -1,38 +1,49 @@
 <script>
- export default{
-  name: "Employee",
-  
+export default {
   // Ex. 1
   props: {
     id: Number,
     name: String,
-    surn: String
+    surn: String,
   },
 
   // Ex. 1
-  emits: ['del'],
+  emits: ['changeuser'],
 
   data() {
     return {
-
+      // Ex. 1
+      isEdit: false,
+      newName: this.name,
+      newSurn: this.surn,
     }
   },
-
   methods: {
-
+    // Ex. 1
+    edituser() {
+      this.isEdit = true;
+    },
+    saveuser() {
+      this.isEdit = false;
+      this.$emit('changeuser', this.id, this.newName, this.newSurn);
+    }
   }
 }
 </script>
 
-
 <template>
   <!-- Ex. 1 -->
-  <p>{{ name }}</p>
-  <p>{{ surn }}</p>
-
-  <button @click="$emit('del', id)">del</button> <br>
+  <template v-if="!isEdit">
+      <h1>{{ name }}</h1>
+      <h1>{{ surn }}</h1>
+      <button @click="edituser">edit</button> <br>
+  </template>
+  <template v-else>
+      <input v-model="newName">
+      <input v-model="newSurn">
+      <button @click="saveuser">save</button> <br>
+  </template>
 </template>
-
 
 <style>
   body{
@@ -67,6 +78,19 @@
     text-align: left;
     margin-left: 500px;
     font-size: 24px;
+  }
+
+  input{
+    font-size: 20px;
+    max-width: 500px;
+    height: 40px;
+    border-radius: 20px;
+    border: 4px solid rgb(238, 255, 250);
+    background-color: rgba(19, 151, 61, 0.616);
+    color: rgb(131, 255, 214);
+    text-shadow: 0px 1px 10px rgb(0, 255, 136);
+    text-align: center;
+    margin-right: 10px;
   }
 
   button{
