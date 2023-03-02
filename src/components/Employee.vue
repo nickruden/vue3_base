@@ -13,10 +13,7 @@
   },
 
   methods: {
-    // Ex. 1
-    btn() {
-      this.$emit('fruits', 'яблоки', 'апельсины');
-    }
+
   }
 }
 </script>
@@ -27,7 +24,7 @@
     <!-- Ex. 1 -->
     <div>
       <h2>Ex. 1</h2>
-      <button @click="btn">Передать данные</button>
+      <button @click="$emit('fruits', 'яблоки', 'апельсины')">Передать данные</button>
     </div>
 
     <p id="endword">by NikitaRudenko</p>
